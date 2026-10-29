@@ -39,7 +39,7 @@
       <section>
         <h2>Sustitución trigonométrica</h2>
         <p>Se usa cuando el integrando contiene una raíz de la forma √(a²−u²), √(a²+u²) o √(u²−a²), que no se resuelven por ningún método anterior. El formulario de casos propone, para cada una, una sustitución con seno, tangente o secante que elimina la raíz.</p>
-        <div class="nota"><strong>Sobre el formulario de casos.</strong> A partir de aquí, cada método se identifica con los casos del formulario de apoyo (sustitución trigonométrica y fracciones parciales): primero se reconoce a qué caso corresponde la integral y después se sigue la receta de ese caso.
+        <div class="nota"><strong>Sobre el formulario de casos.</strong> El formulario que me compartiste trae los casos numerados únicamente para sustitución trigonométrica y para fracciones parciales. Por eso, en este capítulo, el Ejercicio 13 y el Ejercicio 15 citan esos casos tal como aparecen en el formulario. Integración por partes y la sustitución por nueva variable no vienen en ese documento con casos numerados, así que en esos dos ejercicios la segunda explicación usa la clasificación estándar de cada método (LIATE y método tabular para partes; la fórmula general del índice común para la nueva variable), para que de cualquier forma tengas las dos maneras de llegar al resultado.
         </div>
         <div class="cols">
           <div class="formula"><small>Caso 1: √(a²−u²)</small>u = a sen θ &nbsp;·&nbsp; √(a²−u²) = a cos θ
@@ -117,52 +117,93 @@
         <p>Se aplica cuando el integrando es un producto de dos funciones de distinto tipo (polinomio por exponencial, polinomio por trigonométrica, logaritmo, etc.) y no hay una sustitución simple que lo resuelva.</p>
         <div class="formula"><small>Fórmula de partes</small>∫ u dv = u v − ∫ v du
         </div>
-        <p>La elección de u sigue, en general, el orden LIATE (logarítmica, inversa trigonométrica, algebraica, trigonométrica, exponencial): se elige como u la función que aparece primero en esa lista.</p>
+        <p>Cada ejemplo se resuelve primero paso a paso con la fórmula de partes y después se muestra según la clasificación por casos (orden LIATE para elegir u, y el método tabular como atajo cuando hay que aplicar partes varias veces).</p>
+        <figure>
+          <!-- IMAGEN: reemplaza el div por <img src="img/archivo.png" alt="..."> -->
+          <div class="espacio">Espacio para imagen<br>Esquema del método tabular (columnas D e I)
+          </div>
+          <figcaption>Figura 4.2. Método tabular para integración por partes repetida.</figcaption>
+        </figure>
         <h3 id="s2">Ejercicio 14 · Integración por partes</h3>
         <div class="ejemplo">
           <h4>Ejemplo 1</h4>
           <p class="enun">∫ x e²ˣ dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
             <li>Se elige u = x (se deriva fácil) y dv = e²ˣdx; entonces du = dx, v = e²ˣ/2.</li>
-            <li>Fórmula: ∫u dv = uv − ∫v du.</li>
+            <li>Se aplica la fórmula: ∫u dv = uv − ∫v du.</li>
             <li>= x·e²ˣ/2 − ∫e²ˣ/2 dx = xe²ˣ/2 − e²ˣ/4.</li>
+          </ol>
+          <p class="sub-label">Según la clasificación de casos (LIATE y método tabular)</p>
+          <ol class="pasos">
+            <li>Es el <b>Caso: polinomio × exponencial</b>; por LIATE se deriva el polinomio (u) y se integra la exponencial (dv).</li>
+            <li>Se arma la tabla: columna D (derivadas de x): x, 1, 0; columna I (integrales de e²ˣ): e²ˣ/2, e²ˣ/4.</li>
+            <li>Se multiplica en diagonal alternando signos + y −, y se detiene cuando D llega a 0: +x·(e²ˣ/2) − 1·(e²ˣ/4).</li>
           </ol>
           <p class="res">Resultado: (x/2) e²ˣ − (1/4) e²ˣ + C</p>
         </div>
         <div class="ejemplo">
           <h4>Ejemplo 2</h4>
           <p class="enun">∫ x cos x dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
             <li>u = x, dv = cosx dx; du = dx, v = senx.</li>
             <li>∫u dv = uv − ∫v du = x senx − ∫senx dx.</li>
+          </ol>
+          <p class="sub-label">Según la clasificación de casos (LIATE y método tabular)</p>
+          <ol class="pasos">
+            <li>Es el <b>Caso: polinomio × trigonométrica</b>; u = x (se deriva), dv = cosx dx (se integra).</li>
+            <li>Tabla: columna D: x, 1, 0; columna I (integrales de cosx): senx, −cosx.</li>
+            <li>Diagonales con signos +, −: +x·senx − 1·(−cosx) = x senx + cosx.</li>
           </ol>
           <p class="res">Resultado: x sen x + cos x + C</p>
         </div>
         <div class="ejemplo">
           <h4>Ejemplo 3</h4>
           <p class="enun">∫ x² eˣ dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
             <li>u = x², dv = eˣdx; du = 2x dx, v = eˣ. Primera aplicación: x²eˣ − 2∫xeˣdx.</li>
             <li>La integral restante, ∫xeˣdx, se vuelve a resolver por partes (u=x, dv=eˣdx): xeˣ − eˣ.</li>
             <li>Se sustituye de regreso: x²eˣ − 2(xeˣ − eˣ).</li>
+          </ol>
+          <p class="sub-label">Según la clasificación de casos (LIATE y método tabular)</p>
+          <ol class="pasos">
+            <li>Es el <b>Caso: polinomio × exponencial</b>, pero el polinomio es de grado 2, así que la tabla tiene un renglón más que en el Ejemplo 1.</li>
+            <li>Tabla: columna D: x², 2x, 2, 0; columna I (integrales repetidas de eˣ): eˣ, eˣ, eˣ.</li>
+            <li>Diagonales con signos +,−,+: +x²·eˣ − 2x·eˣ + 2·eˣ (se detiene en D = 0).</li>
           </ol>
           <p class="res">Resultado: eˣ(x² − 2x + 2) + C</p>
         </div>
         <div class="ejemplo">
           <h4>Ejemplo 4</h4>
           <p class="enun">∫ x sen 3x dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
             <li>u = x, dv = sen3x dx; du = dx, v = −cos3x/3.</li>
             <li>= −x cos3x/3 + (1/3)∫cos3x dx = −xcos3x/3 + (1/9)sen3x.</li>
+          </ol>
+          <p class="sub-label">Según la clasificación de casos (LIATE y método tabular)</p>
+          <ol class="pasos">
+            <li><b>Caso: polinomio × trigonométrica</b> (igual que el Ejemplo 2, con ángulo múltiple).</li>
+            <li>Tabla: columna D: x, 1, 0; columna I (integrales de sen3x): −cos3x/3, −sen3x/9.</li>
+            <li>Diagonales +,−: +x·(−cos3x/3) − 1·(−sen3x/9) = −xcos3x/3 + sen3x/9.</li>
           </ol>
           <p class="res">Resultado: −(x/3) cos 3x + (1/9) sen 3x + C</p>
         </div>
         <div class="ejemplo">
           <h4>Ejemplo 5</h4>
           <p class="enun">∫ ln x dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
             <li>Se elige u = ln x y dv = dx (el otro factor implícito); du = dx/x, v = x.</li>
             <li>∫u dv = uv − ∫v du = x ln x − ∫x·(1/x)dx = x ln x − ∫dx.</li>
+          </ol>
+          <p class="sub-label">Según la clasificación de casos (LIATE y método tabular)</p>
+          <ol class="pasos">
+            <li>Es el <b>Caso: función logarítmica sola</b>; en LIATE, la logarítmica siempre se elige como u, nunca como dv.</li>
+            <li>Aquí no conviene la tabla, porque dv = dx no vuelve a integrarse de forma útil; se resuelve en un solo paso.</li>
+            <li>u = ln x (se deriva), dv = dx (se integra): du = dx/x, v = x.</li>
           </ol>
           <p class="res">Resultado: x ln x − x + C</p>
         </div>
@@ -170,8 +211,6 @@
       <section>
         <h2>Fracciones parciales</h2>
         <p>Se aplica para integrar una fracción propia P(x)/Q(x). Se factoriza Q(x) y, según el formulario de casos, se descompone la fracción en una suma de fracciones más simples, cuyo denominador es cada factor (o potencia de factor) de Q(x).</p>
-        <div class="nota"><strong>Sobre el formulario de casos.</strong> A partir de aquí, cada método se identifica con los casos del formulario de apoyo (sustitución trigonométrica y fracciones parciales): primero se reconoce a qué caso corresponde la integral y después se sigue la receta de ese caso.
-        </div>
         <div class="cols">
           <div class="formula"><small>Caso 1 · Lineales sin repetir</small>P(x)/Q(x) = A₁/(a₁x+b₁) + A₂/(a₂x+b₂) + …
           </div>
@@ -184,58 +223,91 @@
           <!-- IMAGEN: reemplaza el div por <img src="img/archivo.png" alt="..."> -->
           <div class="espacio">Espacio para imagen<br>Factorización de Q(x) antes de plantear las fracciones
           </div>
-          <figcaption>Figura 4.2. Identificación del caso según los factores de Q(x).</figcaption>
+          <figcaption>Figura 4.3. Identificación del caso según los factores de Q(x).</figcaption>
         </figure>
+        <p>Cada ejemplo se resuelve primero de forma intuitiva (planteando A, B, D y despejando) y después se identifica explícitamente con el caso del formulario y su fórmula general.</p>
         <h3 id="s3">Ejercicio 15 · Fracciones parciales</h3>
         <div class="ejemplo">
           <h4>Ejemplo 1</h4>
-          <p class="enun">∫ (x+1) / [(x−2)(x+3)] dx  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 1 del formulario: factores lineales, no se repiten</span></p>
+          <p class="enun">∫ (x+1) / [(x−2)(x+3)] dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
-            <li>Se escribe (x+1)/[(x−2)(x+3)] = A/(x−2) + B/(x+3).</li>
-            <li>Multiplicando por el denominador común: x+1 = A(x+3) + B(x−2).</li>
+            <li>El integrando es una fracción propia (el numerador tiene menor grado que el denominador) con dos factores lineales distintos.</li>
+            <li>Se propone (x+1)/[(x−2)(x+3)] = A/(x−2) + B/(x+3) y se multiplica por el denominador común: x+1 = A(x+3) + B(x−2).</li>
             <li>Con x=2: 3=5A ⇒ A=3/5. Con x=−3: −2=−5B ⇒ B=2/5.</li>
-            <li>∫[ (3/5)/(x−2) + (2/5)/(x+3) ]dx.</li>
+            <li>Se integra cada fracción simple por separado.</li>
+          </ol>
+          <p class="sub-label">Según el formulario (Caso 1: factores lineales, no se repiten)</p>
+          <ol class="pasos">
+            <li>Q(x) = (x−2)(x+3) es producto de factores lineales (a₁x+b₁)(a₂x+b₂), ninguno repetido: es el Caso 1 del formulario.</li>
+            <li>Fórmula general del Caso 1: P(x)/Q(x) = A₁/(a₁x+b₁) + A₂/(a₂x+b₂).</li>
+            <li>Se identifica a₁=1,b₁=−2,a₂=1,b₂=3 y se obtienen A₁=3/5, A₂=2/5, igual que arriba.</li>
           </ol>
           <p class="res">Resultado: (3/5) ln|x−2| + (2/5) ln|x+3| + C</p>
         </div>
         <div class="ejemplo">
           <h4>Ejemplo 2</h4>
-          <p class="enun">∫ dx / [(x−1)(x+2)]  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 1 del formulario</span></p>
+          <p class="enun">∫ dx / [(x−1)(x+2)]</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
             <li>1/[(x−1)(x+2)] = A/(x−1) + B/(x+2).</li>
             <li>1 = A(x+2) + B(x−1). Con x=1: A=1/3. Con x=−2: B=−1/3.</li>
+          </ol>
+          <p class="sub-label">Según el formulario (Caso 1: factores lineales, no se repiten)</p>
+          <ol class="pasos">
+            <li>Igual que el ejemplo anterior, Q(x) es producto de dos factores lineales distintos: Caso 1.</li>
+            <li>Se aplica directamente P(x)/Q(x) = A₁/(a₁x+b₁) + A₂/(a₂x+b₂) con P(x)=1, obteniendo A₁=1/3, A₂=−1/3.</li>
           </ol>
           <p class="res">Resultado: (1/3) ln|x−1| − (1/3) ln|x+2| + C</p>
         </div>
         <div class="ejemplo">
           <h4>Ejemplo 3</h4>
-          <p class="enun">∫ dx / [x(x−1)²]  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 2 del formulario: factor lineal repetido</span></p>
+          <p class="enun">∫ dx / [x(x−1)²]</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
-            <li>Como (x−1) se repite dos veces: 1/[x(x−1)²] = A/x + B/(x−1) + C/(x−1)².</li>
-            <li>1 = A(x−1)² + Bx(x−1) + Cx. Con x=0: A=1. Con x=1: C=1.</li>
+            <li>El factor (x−1) aparece elevado al cuadrado, así que se propone 1/[x(x−1)²] = A/x + B/(x−1) + D/(x−1)².</li>
+            <li>1 = A(x−1)² + Bx(x−1) + Dx. Con x=0: A=1. Con x=1: D=1.</li>
             <li>Comparando el coeficiente de x²: 0 = A+B ⇒ B=−1.</li>
-            <li>∫[ 1/x − 1/(x−1) + 1/(x−1)² ]dx.</li>
+            <li>Se integra cada término; el de D/(x−1)² da −D/(x−1).</li>
+          </ol>
+          <p class="sub-label">Según el formulario (Caso 2: factor lineal que se repite)</p>
+          <ol class="pasos">
+            <li>Q(x) = x(x−1)² tiene el factor (x−1) repetido 2 veces: es el Caso 2 del formulario.</li>
+            <li>Fórmula general del Caso 2 para (a₁x+b₁) repetido n veces: A₁/(a₁x+b₁)ⁿ + A₂/(a₁x+b₁)ⁿ⁻¹ + … + Aₙ/(a₁x+b₁), más un término A/x por el factor simple restante.</li>
+            <li>Con n=2 y a₁x+b₁=x−1 se obtiene A₁/(x−1)² + A₂/(x−1), que corresponde a D=1 y B=−1 de la columna anterior.</li>
           </ol>
           <p class="res">Resultado: ln|x| − ln|x−1| − 1/(x−1) + C</p>
         </div>
         <div class="ejemplo">
           <h4>Ejemplo 4</h4>
-          <p class="enun">∫ (x+4) / (x+1)² dx  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 2 del formulario</span></p>
+          <p class="enun">∫ (x+4) / (x+1)² dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
             <li>(x+4)/(x+1)² = A/(x+1) + B/(x+1)².</li>
             <li>x+4 = A(x+1) + B. Con x=−1: B=3. Comparando coeficientes de x: A=1.</li>
-            <li>∫[1/(x+1) + 3/(x+1)²]dx.</li>
+          </ol>
+          <p class="sub-label">Según el formulario (Caso 2: factor lineal que se repite)</p>
+          <ol class="pasos">
+            <li>Q(x) = (x+1)² es un único factor lineal repetido 2 veces: Caso 2 con n=2.</li>
+            <li>Fórmula general: A₁/(ax+b)² + A₂/(ax+b). Aquí a=1, b=1, A₁=3 (el término sin dividir) y A₂=1.</li>
           </ol>
           <p class="res">Resultado: ln|x+1| − 3/(x+1) + C</p>
         </div>
         <div class="ejemplo">
           <h4>Ejemplo 5</h4>
-          <p class="enun">∫ x dx / [(x²+1)(x+1)]  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 3 del formulario: factor cuadrático irreducible</span></p>
+          <p class="enun">∫ x dx / [(x²+1)(x+1)]</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
             <li>x/[(x²+1)(x+1)] = (Ax+B)/(x²+1) + D/(x+1).</li>
             <li>x = (Ax+B)(x+1) + D(x²+1). Con x=−1: −1=2D ⇒ D=−1/2.</li>
             <li>Comparando coeficientes de x²: 0=A+D ⇒ A=1/2. Con el término independiente: 0=B+D ⇒ B=1/2.</li>
-            <li>∫[ (x/2+1/2)/(x²+1) − (1/2)/(x+1) ]dx; el primer término se separa en x/(x²+1) y 1/(x²+1).</li>
+            <li>El término (x/2+1/2)/(x²+1) se separa en x/(x²+1) (logaritmo) más 1/(x²+1) (arco tangente).</li>
+          </ol>
+          <p class="sub-label">Según el formulario (Caso 3: factor cuadrático irreducible, no se repite)</p>
+          <ol class="pasos">
+            <li>Q(x) = (x²+1)(x+1) tiene un factor cuadrático irreducible x²+1 (no tiene raíces reales) que no se repite: es el Caso 3 para ese factor, combinado con un Caso 1 para (x+1).</li>
+            <li>Fórmula general del Caso 3: (A₁x+B₁)/(a₁x²+b₁x+c₁), que aquí da (Ax+B)/(x²+1) con A=1/2, B=1/2.</li>
+            <li>El factor lineal (x+1) aporta el término D/(x+1) del Caso 1, con D=−1/2, igual que arriba.</li>
           </ol>
           <p class="res">Resultado: (1/4) ln(x²+1) + (1/2) arctan x − (1/2) ln|x+1| + C</p>
         </div>
@@ -243,58 +315,90 @@
       <section>
         <h2>Sustitución por una nueva variable</h2>
         <p>Cuando el integrando mezcla potencias fraccionarias de x (como √x y ∛x), se propone una nueva variable t elevada al mínimo común múltiplo de los índices de las raíces, para que todo quede en potencias enteras de t —una integral racional que se resuelve por división o fracciones parciales.</p>
-        <div class="formula"><small>Idea general</small>Si aparecen x<sup>1/m</sup> y x<sup>1/n</sup>, se propone t = x<sup>1/mcm(m,n)</sup>
+        <div class="formula"><small>Fórmula general</small>Si aparecen x<sup>1/m</sup> y x<sup>1/n</sup>, se propone t = x<sup>1/mcm(m,n)</sup>
         </div>
         <h3 id="s4">Ejercicio 16 · Sustitución por una nueva variable</h3>
         <div class="ejemplo">
           <h4>Ejemplo 1</h4>
           <p class="enun">∫ dx / (√x + x)</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
             <li>Se propone t = √x, por lo que x = t², dx = 2t dt.</li>
             <li>√x + x = t + t² = t(1+t).</li>
             <li>∫ 2t dt / [t(1+t)] = 2∫dt/(1+t) = 2 ln|1+t|.</li>
+          </ol>
+          <p class="sub-label">Aplicando la fórmula general de sustitución</p>
+          <ol class="pasos">
+            <li>El integrando solo tiene la raíz x<sup>1/2</sup>, así que el índice a igualar es m=2: se propone t = x<sup>1/mcm(2)</sup> = x<sup>1/2</sup>.</li>
+            <li>Toda la integral queda en potencias enteras de t, que es justo el objetivo de la fórmula general.</li>
+            <li>Se regresa a x sustituyendo t = √x en el resultado.</li>
           </ol>
           <p class="res">Resultado: 2 ln (√x + 1) + C</p>
         </div>
         <div class="ejemplo">
           <h4>Ejemplo 2</h4>
           <p class="enun">∫ √x / (1 + √x) dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
             <li>Se propone t = √x, x = t², dx = 2t dt.</li>
             <li>∫ t/(1+t) · 2t dt = 2∫ t²/(1+t) dt; se divide: t²/(1+t) = t − 1 + 1/(1+t).</li>
             <li>2∫(t − 1 + 1/(1+t))dt = 2[t²/2 − t + ln|1+t|] = t² − 2t + 2ln|1+t|.</li>
+          </ol>
+          <p class="sub-label">Aplicando la fórmula general de sustitución</p>
+          <ol class="pasos">
+            <li>De nuevo solo aparece x<sup>1/2</sup>, así que t = x<sup>1/2</sup> convierte la integral en una función racional de t.</li>
+            <li>La división de polinomios (t²/(1+t)) es el paso extra que se necesita cuando el grado del numerador iguala o supera al del denominador.</li>
           </ol>
           <p class="res">Resultado: x − 2√x + 2 ln (√x + 1) + C</p>
         </div>
         <div class="ejemplo">
           <h4>Ejemplo 3</h4>
           <p class="enun">∫ dx / (√x − ∛x)</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
             <li>Como aparecen x<sup>1/2</sup> y x<sup>1/3</sup>, se usa el común denominador de los índices: t = x<sup>1/6</sup>, x = t⁶, dx = 6t⁵dt.</li>
             <li>√x = t³, ∛x = t², por lo que √x − ∛x = t²(t−1).</li>
             <li>∫ 6t⁵dt / [t²(t−1)] = 6∫t³/(t−1)dt; se divide: t³/(t−1) = t²+t+1+1/(t−1).</li>
             <li>6∫(t²+t+1+1/(t−1))dt = 6[t³/3+t²/2+t+ln|t−1|] = 2t³+3t²+6t+6ln|t−1|.</li>
           </ol>
+          <p class="sub-label">Aplicando la fórmula general de sustitución</p>
+          <ol class="pasos">
+            <li>Los índices de las raíces son m=2 y n=3; la fórmula general pide t = x<sup>1/mcm(m,n)</sup> = x<sup>1/6</sup>.</li>
+            <li>Con ese exponente, x<sup>1/2</sup> = t³ y x<sup>1/3</sup> = t² son ambas potencias enteras de t, por lo que toda la integral se vuelve racional.</li>
+            <li>Al final se deshace el cambio con t = x<sup>1/6</sup>.</li>
+          </ol>
           <p class="res">Resultado: 2√x + 3∛x + 6x<sup>1/6</sup> + 6 ln (x<sup>1/6</sup> − 1) + C</p>
         </div>
         <div class="ejemplo">
           <h4>Ejemplo 4</h4>
           <p class="enun">∫ dx / (√x + ∛x)</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
             <li>Igual que el anterior, se usa t = x<sup>1/6</sup>: √x = t³, ∛x = t².</li>
             <li>√x + ∛x = t²(t+1).</li>
             <li>6∫t³dt/[t²(t+1)] = 6∫t/(t+1)·t dt… se divide t³/(t+1) = t²−t+1−1/(t+1).</li>
             <li>6∫(t²−t+1−1/(t+1))dt = 2t³−3t²+6t−6ln|t+1|.</li>
           </ol>
+          <p class="sub-label">Aplicando la fórmula general de sustitución</p>
+          <ol class="pasos">
+            <li>Mismos índices m=2, n=3 que el Ejemplo 3, así que la fórmula pide el mismo cambio t = x<sup>1/6</sup>.</li>
+            <li>Solo cambia el signo en el denominador original, lo que cambia el signo de las fracciones al dividir, pero el procedimiento es idéntico.</li>
+          </ol>
           <p class="res">Resultado: 2√x − 3∛x + 6x<sup>1/6</sup> − 6 ln (x<sup>1/6</sup> + 1) + C</p>
         </div>
         <div class="ejemplo">
           <h4>Ejemplo 5</h4>
           <p class="enun">∫ dx / (1 + ∛x)</p>
+          <p class="sub-label">Explicación paso a paso</p>
           <ol class="pasos">
             <li>Se propone t = x<sup>1/3</sup>, x = t³, dx = 3t²dt.</li>
             <li>∫ 3t²dt / (1+t); se divide: 3t²/(1+t) = 3t − 3 + 3/(1+t).</li>
             <li>∫(3t−3+3/(1+t))dt = (3/2)t² − 3t + 3ln|1+t|.</li>
+          </ol>
+          <p class="sub-label">Aplicando la fórmula general de sustitución</p>
+          <ol class="pasos">
+            <li>Aquí solo aparece el índice 3 (la raíz cúbica), así que t = x<sup>1/3</sup> es directamente la fórmula general con un único índice.</li>
+            <li>No hace falta mínimo común múltiplo porque no hay una segunda raíz con índice distinto.</li>
           </ol>
           <p class="res">Resultado: (3/2) x<sup>2/3</sup> − 3x<sup>1/3</sup> + 3 ln (x<sup>1/3</sup> + 1) + C</p>
         </div>

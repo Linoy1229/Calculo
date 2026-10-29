@@ -1,6 +1,16 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Capítulo 4 · Métodos de integración</title><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
   <header class="barra">
-    <div><strong><a href="index.html" style="color:inherit;text-decoration:none">Cálculo Integral</a></strong><span><a href="index.html" style="color:inherit">← Inicio</a></span>
+    <div>
+      <div class="marca">
+        <div class="logos">
+          <!-- LOGO UAT: reemplaza por <img src="img/logo-uat.png" alt="UAT"> -->
+          <div class="espacio" style="min-height:42px;width:70px;padding:2px;font-size:.6rem">UAT
+          </div>
+          <!-- LOGO FIC: reemplaza por <img src="img/logo-fic.png" alt="FIC"> -->
+          <div class="espacio" style="min-height:42px;width:70px;padding:2px;font-size:.6rem">FIC
+          </div>
+        </div><strong><a href="index.html" style="color:inherit;text-decoration:none">Cálculo Integral</a></strong>
+      </div><span><a href="index.html" style="color:inherit">← Inicio</a></span>
     </div>
   </header>
   <div class="cuerpo">
@@ -14,55 +24,283 @@
         <li><a href="capitulo5.html">5. Aplicaciones de la integral</a></li>
         <li><a href="capitulo6.html">6. Ecuaciones diferenciales</a></li>
       </ol>
+      <h2 class="sep">En esta página</h2>
+      <ol>
+        <li><a href="#s1">Ejercicio 13 · Sustitución trigonométrica</a></li>
+        <li><a href="#s2">Ejercicio 14 · Integración por partes</a></li>
+        <li><a href="#s3">Ejercicio 15 · Fracciones parciales</a></li>
+        <li><a href="#s4">Ejercicio 16 · Nueva variable</a></li>
+      </ol>
     </nav>
     <main>
-      <p class="cap">Capítulo 4 · Págs. 48–76</p>
+      <p class="cap">Capítulo 4 · Págs. 48–76 (hasta el Ejercicio 16)</p>
       <h1 style="margin-top:0">Métodos de integración</h1>
-      <p>Sustitución trigonométrica, por partes, fracciones parciales, nueva variable, diferenciales binomias.</p>
-      <div class="nota">Los ejemplos paso a paso de este capítulo se agregarán en la siguiente entrega.
-      </div>
-      <div class="tema">
-        <div class="num">01
+      <p>Sustitución trigonométrica, integración por partes, fracciones parciales y sustitución por una nueva variable.</p>
+      <section>
+        <h2>Sustitución trigonométrica</h2>
+        <p>Se usa cuando el integrando contiene una raíz de la forma √(a²−u²), √(a²+u²) o √(u²−a²), que no se resuelven por ningún método anterior. El formulario de casos propone, para cada una, una sustitución con seno, tangente o secante que elimina la raíz.</p>
+        <div class="nota"><strong>Sobre el formulario de casos.</strong> A partir de aquí, cada método se identifica con los casos del formulario de apoyo (sustitución trigonométrica y fracciones parciales): primero se reconoce a qué caso corresponde la integral y después se sigue la receta de ese caso.
         </div>
-        <div>
-          <h3>Sustitución trigonométrica</h3>
+        <div class="cols">
+          <div class="formula"><small>Caso 1: √(a²−u²)</small>u = a sen θ &nbsp;·&nbsp; √(a²−u²) = a cos θ
+          </div>
+          <div class="formula"><small>Caso 2: √(a²+u²)</small>u = a tan θ &nbsp;·&nbsp; √(a²+u²) = a sec θ
+          </div>
         </div>
-      </div>
-      <div class="tema">
-        <div class="num">02
+        <div class="formula"><small>Caso 3: √(u²−a²)</small>u = a sec θ &nbsp;·&nbsp; √(u²−a²) = a tan θ
         </div>
-        <div>
-          <h3>Integración por partes</h3>
+        <figure>
+          <!-- IMAGEN: reemplaza el div por <img src="img/archivo.png" alt="..."> -->
+          <div class="espacio">Espacio para imagen<br>Los tres triángulos de referencia de la sustitución trigonométrica
+          </div>
+          <figcaption>Figura 4.1. Triángulos para los casos 1, 2 y 3.</figcaption>
+        </figure>
+        <h3 id="s1">Ejercicio 13 · Sustitución trigonométrica</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ dx / [x² √(16 − x²)]  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 1 del formulario</span></p>
+          <ol class="pasos">
+            <li>La expresión es √(a²−u²) con a=4, u=x, así que se propone x = 4 sen θ, dx = 4 cos θ dθ.</li>
+            <li>√(16−x²) = √(16−16sen²θ) = 4cos θ.</li>
+            <li>Se sustituye: ∫ 4cosθ dθ / [16sen²θ · 4cosθ] = (1/16)∫csc²θ dθ = −(1/16)cot θ.</li>
+            <li>Con el triángulo de referencia (cateto opuesto x, hipotenusa 4), cot θ = √(16−x²)/x.</li>
+          </ol>
+          <p class="res">Resultado: −√(16 − x²) / (16x) + C</p>
         </div>
-      </div>
-      <div class="tema">
-        <div class="num">03
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ dx / √(x² + 25)  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 2 del formulario</span></p>
+          <ol class="pasos">
+            <li>La expresión es √(a²+u²) con a=5, u=x, así que se propone x = 5 tan θ, dx = 5sec²θ dθ.</li>
+            <li>√(x²+25) = 5 sec θ.</li>
+            <li>∫ 5sec²θ dθ / (5secθ) = ∫secθ dθ = ln|secθ + tanθ|.</li>
+            <li>Con el triángulo (cateto opuesto x, adyacente 5, hipotenusa √(x²+25)): secθ=√(x²+25)/5, tanθ=x/5.</li>
+          </ol>
+          <p class="res">Resultado: ln (x + √(x² + 25)) + C</p>
         </div>
-        <div>
-          <h3>Fracciones parciales</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ x² dx / √(x² + 9)  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 2 del formulario</span></p>
+          <ol class="pasos">
+            <li>Con a=3: x = 3tanθ, dx = 3sec²θ dθ, √(x²+9) = 3secθ.</li>
+            <li>∫ (9tan²θ)(3sec²θ)dθ / (3secθ) = 9∫tan²θ secθ dθ = 9∫(sec³θ − secθ)dθ.</li>
+            <li>∫sec³θ dθ se resuelve por partes (fórmula conocida): (1/2)[secθ tanθ + ln|secθ+tanθ|].</li>
+            <li>Se regresa a x con el triángulo del caso 2 y se simplifica.</li>
+          </ol>
+          <p class="res">Resultado: (x/2)√(x² + 9) − (9/2) ln (x + √(x² + 9)) + C</p>
         </div>
-      </div>
-      <div class="tema">
-        <div class="num">04
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ dx / [x² √(x² − 4)]  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 3 del formulario</span></p>
+          <ol class="pasos">
+            <li>La expresión es √(u²−a²) con a=2, u=x, así que se propone x = 2secθ, dx = 2secθ tanθ dθ.</li>
+            <li>√(x²−4) = 2 tanθ.</li>
+            <li>∫ 2secθ tanθ dθ / [4sec²θ · 2tanθ] = (1/4)∫cosθ dθ = (1/4)senθ.</li>
+            <li>Con el triángulo (hipotenusa x, adyacente 2, opuesto √(x²−4)): senθ = √(x²−4)/x.</li>
+          </ol>
+          <p class="res">Resultado: √(x² − 4) / (4x) + C</p>
         </div>
-        <div>
-          <h3>Sustitución por una nueva variable</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ √(x² − 16) / x dx  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 3 del formulario</span></p>
+          <ol class="pasos">
+            <li>Con a=4: x = 4secθ, dx = 4secθ tanθ dθ, √(x²−16) = 4tanθ.</li>
+            <li>∫ (4tanθ)(4secθ tanθ)dθ / (4secθ) = 4∫tan²θ dθ = 4∫(sec²θ−1)dθ.</li>
+            <li>= 4(tanθ − θ).</li>
+            <li>Del triángulo: tanθ = √(x²−16)/4 y θ = arcsec(x/4).</li>
+          </ol>
+          <p class="res">Resultado: √(x² − 16) − 4 arcsec(x/4) + C</p>
         </div>
-      </div>
-      <div class="tema">
-        <div class="num">05
+      </section>
+      <section>
+        <h2>Integración por partes</h2>
+        <p>Se aplica cuando el integrando es un producto de dos funciones de distinto tipo (polinomio por exponencial, polinomio por trigonométrica, logaritmo, etc.) y no hay una sustitución simple que lo resuelva.</p>
+        <div class="formula"><small>Fórmula de partes</small>∫ u dv = u v − ∫ v du
         </div>
-        <div>
-          <h3>Diferenciales binomias</h3>
+        <p>La elección de u sigue, en general, el orden LIATE (logarítmica, inversa trigonométrica, algebraica, trigonométrica, exponencial): se elige como u la función que aparece primero en esa lista.</p>
+        <h3 id="s2">Ejercicio 14 · Integración por partes</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ x e²ˣ dx</p>
+          <ol class="pasos">
+            <li>Se elige u = x (se deriva fácil) y dv = e²ˣdx; entonces du = dx, v = e²ˣ/2.</li>
+            <li>Fórmula: ∫u dv = uv − ∫v du.</li>
+            <li>= x·e²ˣ/2 − ∫e²ˣ/2 dx = xe²ˣ/2 − e²ˣ/4.</li>
+          </ol>
+          <p class="res">Resultado: (x/2) e²ˣ − (1/4) e²ˣ + C</p>
         </div>
-      </div>
-      <div class="tema">
-        <div class="num">06
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ x cos x dx</p>
+          <ol class="pasos">
+            <li>u = x, dv = cosx dx; du = dx, v = senx.</li>
+            <li>∫u dv = uv − ∫v du = x senx − ∫senx dx.</li>
+          </ol>
+          <p class="res">Resultado: x sen x + cos x + C</p>
         </div>
-        <div>
-          <h3>Transformaciones de diferenciales trigonométricas</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ x² eˣ dx</p>
+          <ol class="pasos">
+            <li>u = x², dv = eˣdx; du = 2x dx, v = eˣ. Primera aplicación: x²eˣ − 2∫xeˣdx.</li>
+            <li>La integral restante, ∫xeˣdx, se vuelve a resolver por partes (u=x, dv=eˣdx): xeˣ − eˣ.</li>
+            <li>Se sustituye de regreso: x²eˣ − 2(xeˣ − eˣ).</li>
+          </ol>
+          <p class="res">Resultado: eˣ(x² − 2x + 2) + C</p>
         </div>
-      </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ x sen 3x dx</p>
+          <ol class="pasos">
+            <li>u = x, dv = sen3x dx; du = dx, v = −cos3x/3.</li>
+            <li>= −x cos3x/3 + (1/3)∫cos3x dx = −xcos3x/3 + (1/9)sen3x.</li>
+          </ol>
+          <p class="res">Resultado: −(x/3) cos 3x + (1/9) sen 3x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ ln x dx</p>
+          <ol class="pasos">
+            <li>Se elige u = ln x y dv = dx (el otro factor implícito); du = dx/x, v = x.</li>
+            <li>∫u dv = uv − ∫v du = x ln x − ∫x·(1/x)dx = x ln x − ∫dx.</li>
+          </ol>
+          <p class="res">Resultado: x ln x − x + C</p>
+        </div>
+      </section>
+      <section>
+        <h2>Fracciones parciales</h2>
+        <p>Se aplica para integrar una fracción propia P(x)/Q(x). Se factoriza Q(x) y, según el formulario de casos, se descompone la fracción en una suma de fracciones más simples, cuyo denominador es cada factor (o potencia de factor) de Q(x).</p>
+        <div class="nota"><strong>Sobre el formulario de casos.</strong> A partir de aquí, cada método se identifica con los casos del formulario de apoyo (sustitución trigonométrica y fracciones parciales): primero se reconoce a qué caso corresponde la integral y después se sigue la receta de ese caso.
+        </div>
+        <div class="cols">
+          <div class="formula"><small>Caso 1 · Lineales sin repetir</small>P(x)/Q(x) = A₁/(a₁x+b₁) + A₂/(a₂x+b₂) + …
+          </div>
+          <div class="formula"><small>Caso 2 · Lineal repetido n veces</small>A₁/(ax+b)<sup>n</sup> + A₂/(ax+b)<sup>n−1</sup> + … + A<sub>n</sub>/(ax+b)
+          </div>
+        </div>
+        <div class="formula"><small>Caso 3 · Cuadrático irreducible sin repetir</small>(A₁x+B₁)/(a₁x²+b₁x+c₁) + (A₂x+B₂)/(a₂x²+b₂x+c₂) + …
+        </div>
+        <figure>
+          <!-- IMAGEN: reemplaza el div por <img src="img/archivo.png" alt="..."> -->
+          <div class="espacio">Espacio para imagen<br>Factorización de Q(x) antes de plantear las fracciones
+          </div>
+          <figcaption>Figura 4.2. Identificación del caso según los factores de Q(x).</figcaption>
+        </figure>
+        <h3 id="s3">Ejercicio 15 · Fracciones parciales</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ (x+1) / [(x−2)(x+3)] dx  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 1 del formulario: factores lineales, no se repiten</span></p>
+          <ol class="pasos">
+            <li>Se escribe (x+1)/[(x−2)(x+3)] = A/(x−2) + B/(x+3).</li>
+            <li>Multiplicando por el denominador común: x+1 = A(x+3) + B(x−2).</li>
+            <li>Con x=2: 3=5A ⇒ A=3/5. Con x=−3: −2=−5B ⇒ B=2/5.</li>
+            <li>∫[ (3/5)/(x−2) + (2/5)/(x+3) ]dx.</li>
+          </ol>
+          <p class="res">Resultado: (3/5) ln|x−2| + (2/5) ln|x+3| + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ dx / [(x−1)(x+2)]  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 1 del formulario</span></p>
+          <ol class="pasos">
+            <li>1/[(x−1)(x+2)] = A/(x−1) + B/(x+2).</li>
+            <li>1 = A(x+2) + B(x−1). Con x=1: A=1/3. Con x=−2: B=−1/3.</li>
+          </ol>
+          <p class="res">Resultado: (1/3) ln|x−1| − (1/3) ln|x+2| + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ dx / [x(x−1)²]  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 2 del formulario: factor lineal repetido</span></p>
+          <ol class="pasos">
+            <li>Como (x−1) se repite dos veces: 1/[x(x−1)²] = A/x + B/(x−1) + C/(x−1)².</li>
+            <li>1 = A(x−1)² + Bx(x−1) + Cx. Con x=0: A=1. Con x=1: C=1.</li>
+            <li>Comparando el coeficiente de x²: 0 = A+B ⇒ B=−1.</li>
+            <li>∫[ 1/x − 1/(x−1) + 1/(x−1)² ]dx.</li>
+          </ol>
+          <p class="res">Resultado: ln|x| − ln|x−1| − 1/(x−1) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ (x+4) / (x+1)² dx  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 2 del formulario</span></p>
+          <ol class="pasos">
+            <li>(x+4)/(x+1)² = A/(x+1) + B/(x+1)².</li>
+            <li>x+4 = A(x+1) + B. Con x=−1: B=3. Comparando coeficientes de x: A=1.</li>
+            <li>∫[1/(x+1) + 3/(x+1)²]dx.</li>
+          </ol>
+          <p class="res">Resultado: ln|x+1| − 3/(x+1) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ x dx / [(x²+1)(x+1)]  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 3 del formulario: factor cuadrático irreducible</span></p>
+          <ol class="pasos">
+            <li>x/[(x²+1)(x+1)] = (Ax+B)/(x²+1) + D/(x+1).</li>
+            <li>x = (Ax+B)(x+1) + D(x²+1). Con x=−1: −1=2D ⇒ D=−1/2.</li>
+            <li>Comparando coeficientes de x²: 0=A+D ⇒ A=1/2. Con el término independiente: 0=B+D ⇒ B=1/2.</li>
+            <li>∫[ (x/2+1/2)/(x²+1) − (1/2)/(x+1) ]dx; el primer término se separa en x/(x²+1) y 1/(x²+1).</li>
+          </ol>
+          <p class="res">Resultado: (1/4) ln(x²+1) + (1/2) arctan x − (1/2) ln|x+1| + C</p>
+        </div>
+      </section>
+      <section>
+        <h2>Sustitución por una nueva variable</h2>
+        <p>Cuando el integrando mezcla potencias fraccionarias de x (como √x y ∛x), se propone una nueva variable t elevada al mínimo común múltiplo de los índices de las raíces, para que todo quede en potencias enteras de t —una integral racional que se resuelve por división o fracciones parciales.</p>
+        <div class="formula"><small>Idea general</small>Si aparecen x<sup>1/m</sup> y x<sup>1/n</sup>, se propone t = x<sup>1/mcm(m,n)</sup>
+        </div>
+        <h3 id="s4">Ejercicio 16 · Sustitución por una nueva variable</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ dx / (√x + x)</p>
+          <ol class="pasos">
+            <li>Se propone t = √x, por lo que x = t², dx = 2t dt.</li>
+            <li>√x + x = t + t² = t(1+t).</li>
+            <li>∫ 2t dt / [t(1+t)] = 2∫dt/(1+t) = 2 ln|1+t|.</li>
+          </ol>
+          <p class="res">Resultado: 2 ln (√x + 1) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ √x / (1 + √x) dx</p>
+          <ol class="pasos">
+            <li>Se propone t = √x, x = t², dx = 2t dt.</li>
+            <li>∫ t/(1+t) · 2t dt = 2∫ t²/(1+t) dt; se divide: t²/(1+t) = t − 1 + 1/(1+t).</li>
+            <li>2∫(t − 1 + 1/(1+t))dt = 2[t²/2 − t + ln|1+t|] = t² − 2t + 2ln|1+t|.</li>
+          </ol>
+          <p class="res">Resultado: x − 2√x + 2 ln (√x + 1) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ dx / (√x − ∛x)</p>
+          <ol class="pasos">
+            <li>Como aparecen x<sup>1/2</sup> y x<sup>1/3</sup>, se usa el común denominador de los índices: t = x<sup>1/6</sup>, x = t⁶, dx = 6t⁵dt.</li>
+            <li>√x = t³, ∛x = t², por lo que √x − ∛x = t²(t−1).</li>
+            <li>∫ 6t⁵dt / [t²(t−1)] = 6∫t³/(t−1)dt; se divide: t³/(t−1) = t²+t+1+1/(t−1).</li>
+            <li>6∫(t²+t+1+1/(t−1))dt = 6[t³/3+t²/2+t+ln|t−1|] = 2t³+3t²+6t+6ln|t−1|.</li>
+          </ol>
+          <p class="res">Resultado: 2√x + 3∛x + 6x<sup>1/6</sup> + 6 ln (x<sup>1/6</sup> − 1) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ dx / (√x + ∛x)</p>
+          <ol class="pasos">
+            <li>Igual que el anterior, se usa t = x<sup>1/6</sup>: √x = t³, ∛x = t².</li>
+            <li>√x + ∛x = t²(t+1).</li>
+            <li>6∫t³dt/[t²(t+1)] = 6∫t/(t+1)·t dt… se divide t³/(t+1) = t²−t+1−1/(t+1).</li>
+            <li>6∫(t²−t+1−1/(t+1))dt = 2t³−3t²+6t−6ln|t+1|.</li>
+          </ol>
+          <p class="res">Resultado: 2√x − 3∛x + 6x<sup>1/6</sup> − 6 ln (x<sup>1/6</sup> + 1) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ dx / (1 + ∛x)</p>
+          <ol class="pasos">
+            <li>Se propone t = x<sup>1/3</sup>, x = t³, dx = 3t²dt.</li>
+            <li>∫ 3t²dt / (1+t); se divide: 3t²/(1+t) = 3t − 3 + 3/(1+t).</li>
+            <li>∫(3t−3+3/(1+t))dt = (3/2)t² − 3t + 3ln|1+t|.</li>
+          </ol>
+          <p class="res">Resultado: (3/2) x<sup>2/3</sup> − 3x<sup>1/3</sup> + 3 ln (x<sup>1/3</sup> + 1) + C</p>
+        </div>
+        <div class="nota">El capítulo continúa con diferenciales binomias y transformaciones de diferenciales trigonométricas; se agregarán en la siguiente entrega.
+        </div>
+      </section>
       <div class="pie-nav"><a href="capitulo3.html">← Capítulo 3</a><a href="capitulo5.html">Capítulo 5 →</a>
       </div>
     </main>

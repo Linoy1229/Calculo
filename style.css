@@ -12,8 +12,8 @@ a{color:var(--acento2)}
 .barra{position:sticky;top:0;z-index:10;background:#d9641e;color:#fff8f0;border-bottom:3px solid #a84813}
 .barra div{max-width:1120px;margin:auto;padding:10px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .barra .marca{display:flex;align-items:center;gap:14px}
-.barra .logos{display:flex;align-items:center;gap:10px}
-.barra .logos img{height:42px;width:auto;display:block;background:#fff8f0;border-radius:4px;padding:2px}
+.barra .logos{display:flex;align-items:center;gap:16px}
+.barra .logos img{width:auto;display:block;background:#fff8f0;border-radius:4px;padding:3px 6px}
 .barra strong{font-family:Lora,Georgia,serif;font-size:1.15rem;letter-spacing:.02em}
 .barra span{font-size:.85rem;opacity:.85}
 .barra span a{color:#fff8f0}

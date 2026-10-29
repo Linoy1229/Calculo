@@ -1,6 +1,16 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Capítulo 3 · Integrales de diferenciales trigonométricas</title><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
   <header class="barra">
-    <div><strong><a href="index.html" style="color:inherit;text-decoration:none">Cálculo Integral</a></strong><span><a href="index.html" style="color:inherit">← Inicio</a></span>
+    <div>
+      <div class="marca">
+        <div class="logos">
+          <!-- LOGO UAT: reemplaza por <img src="img/logo-uat.png" alt="UAT"> -->
+          <div class="espacio" style="min-height:42px;width:70px;padding:2px;font-size:.6rem">UAT
+          </div>
+          <!-- LOGO FIC: reemplaza por <img src="img/logo-fic.png" alt="FIC"> -->
+          <div class="espacio" style="min-height:42px;width:70px;padding:2px;font-size:.6rem">FIC
+          </div>
+        </div><strong><a href="index.html" style="color:inherit;text-decoration:none">Cálculo Integral</a></strong>
+      </div><span><a href="index.html" style="color:inherit">← Inicio</a></span>
     </div>
   </header>
   <div class="cuerpo">
@@ -14,55 +24,306 @@
         <li><a href="capitulo5.html">5. Aplicaciones de la integral</a></li>
         <li><a href="capitulo6.html">6. Ecuaciones diferenciales</a></li>
       </ol>
+      <h2 class="sep">En esta página</h2>
+      <ol>
+        <li><a href="#s1">Ejercicio 8 · Potencias impares de sen y cos</a></li>
+        <li><a href="#s2">Ejercicio 9 · Potencias de tan y cot</a></li>
+        <li><a href="#s3">Ejercicio 10 · Potencias de sec y csc</a></li>
+        <li><a href="#s4">Ejercicio 11 · Potencias pares de sen y cos</a></li>
+        <li><a href="#s5">Ejercicio 12 · Productos sen·cos de ángulos distintos</a></li>
+      </ol>
     </nav>
     <main>
       <p class="cap">Capítulo 3 · Págs. 34–46</p>
       <h1 style="margin-top:0">Integrales de diferenciales trigonométricas</h1>
-      <p>Potencias de seno, coseno, tangente, cotangente, secante y cosecante; productos de senos y cosenos.</p>
-      <div class="nota">Los ejemplos paso a paso de este capítulo se agregarán en la siguiente entrega.
-      </div>
-      <div class="tema">
-        <div class="num">01
+      <p>Potencias de seno, coseno, tangente, cotangente, secante y cosecante; productos de senos y cosenos de ángulos distintos.</p>
+      <section>
+        <h2>Potencias impares de seno y coseno</h2>
+        <p>El libro agrupa estos ejercicios en la sección de potencias de funciones trigonométricas. Cuando el exponente de seno o de coseno es impar, se separa un factor de esa función para formar la diferencial y el resto se transforma con sen²x + cos²x = 1.</p>
+        <div class="formula"><small>Caso: exponente impar</small>∫ sen<sup>n</sup>x dx = ∫ sen<sup>n−1</sup>x · sen x dx = ∫ (1−cos²x)<sup>(n−1)/2</sup> sen x dx
         </div>
-        <div>
-          <h3>Potencias impares de seno y coseno</h3>
+        <figure>
+          <!-- IMAGEN: reemplaza el div por <img src="img/archivo.png" alt="..."> -->
+          <div class="espacio">Espacio para imagen<br>Esquema de separar un factor de seno o coseno
+          </div>
+          <figcaption>Figura 3.1. Reducción de una potencia impar.</figcaption>
+        </figure>
+        <h3 id="s1">Ejercicio 8 · Potencias impares de seno y coseno</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ sen³x dx</p>
+          <ol class="pasos">
+            <li>El exponente de seno es impar (3); se separa un factor: sen³x = sen²x · senx.</li>
+            <li>Se usa sen²x = 1 − cos²x, y se propone v = cosx, dv = −senx dx.</li>
+            <li>∫(1−v²)(−dv) = −∫dv + ∫v²dv = −v + v³/3.</li>
+          </ol>
+          <p class="res">Resultado: −cos x + (1/3) cos³x + C</p>
         </div>
-      </div>
-      <div class="tema">
-        <div class="num">02
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ cos⁵x dx</p>
+          <ol class="pasos">
+            <li>El exponente de coseno es impar (5): cos⁵x = cos⁴x · cosx = (cos²x)² · cosx.</li>
+            <li>Se usa cos²x = 1 − sen²x y se propone v = senx, dv = cosx dx.</li>
+            <li>∫(1−v²)²dv = ∫(1 − 2v² + v⁴)dv = v − (2/3)v³ + (1/5)v⁵.</li>
+          </ol>
+          <p class="res">Resultado: sen x − (2/3) sen³x + (1/5) sen⁵x + C</p>
         </div>
-        <div>
-          <h3>Potencias de tangente y cotangente</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ sen³x cos²x dx</p>
+          <ol class="pasos">
+            <li>El exponente de seno es impar; se separa senx y se deja cos²x intacto: sen²x cos²x senx dx.</li>
+            <li>Con sen²x = 1−cos²x y v = cosx, dv = −senx dx: ∫(1−v²)v²(−dv).</li>
+            <li>= −∫(v² − v⁴)dv = −v³/3 + v⁵/5.</li>
+          </ol>
+          <p class="res">Resultado: −(1/3) cos³x + (1/5) cos⁵x + C</p>
         </div>
-      </div>
-      <div class="tema">
-        <div class="num">03
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ sen²x cos³x dx</p>
+          <ol class="pasos">
+            <li>Ahora el exponente impar es el de coseno (3); se separa cosx: cos²x senx² cosx dx... se deja sen²x y cos²x cosx dx.</li>
+            <li>Con cos²x = 1−sen²x y v = senx, dv = cosx dx: ∫v²(1−v²)dv.</li>
+            <li>= ∫(v² − v⁴)dv = v³/3 − v⁵/5.</li>
+          </ol>
+          <p class="res">Resultado: (1/3) sen³x − (1/5) sen⁵x + C</p>
         </div>
-        <div>
-          <h3>Potencias de secante y cosecante</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ cos³2x dx</p>
+          <ol class="pasos">
+            <li>Exponente impar con ángulo múltiple: cos³2x = cos²2x · cos2x = (1−sen²2x)cos2x.</li>
+            <li>Se propone v = sen2x, dv = 2cos2x dx, es decir cos2x dx = dv/2.</li>
+            <li>(1/2)∫(1−v²)dv = (1/2)(v − v³/3).</li>
+          </ol>
+          <p class="res">Resultado: (1/2) sen 2x − (1/6) sen³2x + C</p>
         </div>
-      </div>
-      <div class="tema">
-        <div class="num">04
+      </section>
+      <section>
+        <h2>Potencias de tangente y cotangente</h2>
+        <p>Se usa tan²x = sec²x − 1 (o cot²x = csc²x − 1) para separar un factor sec²x o csc²x, que es inmediato, y reducir el exponente restante.</p>
+        <div class="formula"><small>Identidad clave</small>tan²x = sec²x − 1 &nbsp;&nbsp; cot²x = csc²x − 1
         </div>
-        <div>
-          <h3>Productos tan·sec y cot·csc</h3>
+        <h3 id="s2">Ejercicio 9 · Potencias de tangente y cotangente</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ tan³x dx</p>
+          <ol class="pasos">
+            <li>Se separa tan²x: tan³x = tanx · tan²x, y se usa tan²x = sec²x − 1.</li>
+            <li>∫tanx(sec²x−1)dx = ∫tanx sec²x dx − ∫tanx dx.</li>
+            <li>La primera es inmediata con v=tanx; la segunda es −ln|cosx|.</li>
+          </ol>
+          <p class="res">Resultado: (1/2) tan²x + ln |cos x| + C</p>
         </div>
-      </div>
-      <div class="tema">
-        <div class="num">05
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ cot³x dx</p>
+          <ol class="pasos">
+            <li>De forma análoga, cot³x = cotx(csc²x − 1).</li>
+            <li>∫cotx csc²x dx − ∫cotx dx, con v = cotx en la primera.</li>
+          </ol>
+          <p class="res">Resultado: −(1/2) cot²x − ln |sen x| + C</p>
         </div>
-        <div>
-          <h3>Potencias pares de seno y coseno</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ tan⁴x dx</p>
+          <ol class="pasos">
+            <li>Se separa tan²x: tan⁴x = tan²x(sec²x − 1) = tan²x sec²x − tan²x.</li>
+            <li>∫tan²x sec²x dx es inmediata (v=tanx); para ∫tan²x dx se usa de nuevo tan²x=sec²x−1.</li>
+            <li>tan³x/3 − (tanx − x).</li>
+          </ol>
+          <p class="res">Resultado: (1/3) tan³x − tan x + x + C</p>
         </div>
-      </div>
-      <div class="tema">
-        <div class="num">06
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ cot⁴x dx</p>
+          <ol class="pasos">
+            <li>cot⁴x = cot²x(csc²x − 1) = cot²x csc²x − cot²x.</li>
+            <li>∫cot²x csc²x dx es inmediata; ∫cot²x dx = ∫(csc²x−1)dx = −cotx − x.</li>
+          </ol>
+          <p class="res">Resultado: −(1/3) cot³x + cot x + x + C</p>
         </div>
-        <div>
-          <h3>Productos sen mx·cos nx, sen mx·sen nx, cos mx·cos nx</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ tan³2x dx</p>
+          <ol class="pasos">
+            <li>Con ángulo múltiple: tan³2x = tan2x(sec²2x − 1).</li>
+            <li>∫tan2x sec²2x dx − ∫tan2x dx, con v = 2x en cada cambio.</li>
+          </ol>
+          <p class="res">Resultado: (1/4) tan²2x + (1/2) ln |cos 2x| + C</p>
         </div>
-      </div>
+      </section>
+      <section>
+        <h2>Potencias de secante y cosecante</h2>
+        <p>Cuando el exponente de secante o cosecante es par, se separa sec²x (o csc²x) para la diferencial y el resto se transforma con 1+tan²x = sec²x.</p>
+        <div class="formula"><small>Identidad clave</small>sec²x = 1 + tan²x &nbsp;&nbsp; csc²x = 1 + cot²x
+        </div>
+        <figure>
+          <!-- IMAGEN: reemplaza el div por <img src="img/archivo.png" alt="..."> -->
+          <div class="espacio">Espacio para imagen<br>Triángulo con tan x y sec x
+          </div>
+          <figcaption>Figura 3.2. Relación entre tangente y secante.</figcaption>
+        </figure>
+        <h3 id="s3">Ejercicio 10 · Potencias de secante y cosecante</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ sec⁴x dx</p>
+          <ol class="pasos">
+            <li>Se separa sec²x: sec⁴x = sec²x · sec²x, y se usa sec²x = 1 + tan²x en el primer factor.</li>
+            <li>∫(1+tan²x) sec²x dx, con v = tanx, dv = sec²x dx.</li>
+            <li>∫(1+v²)dv = v + v³/3.</li>
+          </ol>
+          <p class="res">Resultado: tan x + (1/3) tan³x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ csc⁴x dx</p>
+          <ol class="pasos">
+            <li>csc⁴x = csc²x · csc²x = (1+cot²x) csc²x.</li>
+            <li>Con v = cotx, dv = −csc²x dx: −∫(1+v²)dv = −(v+v³/3).</li>
+          </ol>
+          <p class="res">Resultado: −cot x − (1/3) cot³x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ sec⁴2x dx</p>
+          <ol class="pasos">
+            <li>sec⁴2x = (1+tan²2x) sec²2x, con v = tan2x, dv = 2sec²2x dx.</li>
+            <li>(1/2)∫(1+v²)dv = (1/2)(v+v³/3).</li>
+          </ol>
+          <p class="res">Resultado: (1/2) tan 2x + (1/6) tan³2x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ csc⁴3x dx</p>
+          <ol class="pasos">
+            <li>csc⁴3x = (1+cot²3x) csc²3x, con v = cot3x, dv = −3csc²3x dx.</li>
+            <li>−(1/3)∫(1+v²)dv = −(1/3)(v+v³/3).</li>
+          </ol>
+          <p class="res">Resultado: −(1/3) cot 3x − (1/9) cot³3x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ tan²x sec⁴x dx</p>
+          <ol class="pasos">
+            <li>Se deja sec²x para formar dv y se transforma el resto: tan²x sec²x · sec²x = tan²x(1+tan²x) sec²x.</li>
+            <li>Con v = tanx, dv = sec²x dx: ∫v²(1+v²)dv = ∫(v²+v⁴)dv.</li>
+          </ol>
+          <p class="res">Resultado: (1/3) tan³x + (1/5) tan⁵x + C</p>
+        </div>
+      </section>
+      <section>
+        <h2>Potencias pares de seno y coseno</h2>
+        <p>Cuando el exponente es par y no hay un factor impar que separar, se usan las identidades de ángulo medio, aplicándolas una o varias veces según el exponente.</p>
+        <div class="formula"><small>Identidades de ángulo medio</small>sen²x = (1 − cos 2x)/2 &nbsp;&nbsp; cos²x = (1 + cos 2x)/2
+        </div>
+        <h3 id="s4">Ejercicio 11 · Potencias pares de seno y coseno</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ sen²x dx</p>
+          <ol class="pasos">
+            <li>El exponente es par; se usa la identidad de ángulo medio sen²x = (1−cos2x)/2.</li>
+            <li>∫(1/2)dx − ∫(1/2)cos2x dx = x/2 − (1/4)sen2x.</li>
+          </ol>
+          <p class="res">Resultado: x/2 − (1/4) sen 2x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ cos²x dx</p>
+          <ol class="pasos">
+            <li>Se usa cos²x = (1+cos2x)/2.</li>
+            <li>∫(1/2)dx + ∫(1/2)cos2x dx = x/2 + (1/4)sen2x.</li>
+          </ol>
+          <p class="res">Resultado: x/2 + (1/4) sen 2x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ sen⁴x dx</p>
+          <ol class="pasos">
+            <li>sen⁴x = (sen²x)² = [(1−cos2x)/2]² = (1/4)(1 − 2cos2x + cos²2x).</li>
+            <li>Se integra cos²2x con la misma identidad de ángulo medio otra vez: cos²2x = (1+cos4x)/2.</li>
+            <li>Al desarrollar y simplificar se agrupan los términos.</li>
+          </ol>
+          <p class="res">Resultado: (3/8)x − (1/4) sen 2x + (1/32) sen 4x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ cos⁴x dx</p>
+          <ol class="pasos">
+            <li>cos⁴x = [(1+cos2x)/2]² = (1/4)(1 + 2cos2x + cos²2x), con cos²2x = (1+cos4x)/2 de nuevo.</li>
+          </ol>
+          <p class="res">Resultado: (3/8)x + (1/4) sen 2x + (1/32) sen 4x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ sen²3x dx</p>
+          <ol class="pasos">
+            <li>Se usa sen²3x = (1−cos6x)/2 (el ángulo doble de 3x es 6x).</li>
+            <li>∫(1/2)dx − (1/2)∫cos6x dx = x/2 − (1/12)sen6x.</li>
+          </ol>
+          <p class="res">Resultado: x/2 − (1/12) sen 6x + C</p>
+        </div>
+      </section>
+      <section>
+        <h2>Productos de senos y cosenos de ángulos distintos</h2>
+        <p>Cuando el integrando es un producto como sen mx · cos nx, con ángulos diferentes, se convierte en una suma con las identidades de producto a suma, y cada término se integra de forma inmediata.</p>
+        <div class="formula"><small>Identidades de producto a suma</small>sen A cos B = ½[sen(A+B) + sen(A−B)]<br>sen A sen B = ½[cos(A−B) − cos(A+B)]<br>cos A cos B = ½[cos(A−B) + cos(A+B)]
+        </div>
+        <figure>
+          <!-- IMAGEN: reemplaza el div por <img src="img/archivo.png" alt="..."> -->
+          <div class="espacio">Espacio para imagen<br>Tabla de identidades de producto a suma
+          </div>
+          <figcaption>Figura 3.3. Conversión de producto a suma.</figcaption>
+        </figure>
+        <h3 id="s5">Ejercicio 12 · Productos sen mx · cos nx y similares</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ sen 2x cos 3x dx</p>
+          <ol class="pasos">
+            <li>Se usa sen A cos B = (1/2)[sen(A+B) + sen(A−B)], con A=2x, B=3x.</li>
+            <li>sen5x + sen(−x) = sen5x − senx; se integra cada término.</li>
+            <li>∫(1/2)(sen5x − senx)dx = (1/2)[−cos5x/5 + cosx].</li>
+          </ol>
+          <p class="res">Resultado: −(1/10) cos 5x + (1/2) cos x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ sen 4x sen 2x dx</p>
+          <ol class="pasos">
+            <li>Se usa sen A sen B = (1/2)[cos(A−B) − cos(A+B)], con A=4x, B=2x.</li>
+            <li>(1/2)[cos2x − cos6x]; se integra cada término.</li>
+          </ol>
+          <p class="res">Resultado: (1/4) sen 2x − (1/12) sen 6x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ cos 5x cos 3x dx</p>
+          <ol class="pasos">
+            <li>Se usa cos A cos B = (1/2)[cos(A−B) + cos(A+B)], con A=5x, B=3x.</li>
+            <li>(1/2)[cos2x + cos8x]; se integra cada término.</li>
+          </ol>
+          <p class="res">Resultado: (1/4) sen 2x + (1/16) sen 8x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ sen 5x cos 2x dx</p>
+          <ol class="pasos">
+            <li>sen A cos B = (1/2)[sen(A+B)+sen(A−B)], con A=5x, B=2x.</li>
+            <li>(1/2)[sen7x + sen3x]; se integra cada término.</li>
+          </ol>
+          <p class="res">Resultado: −(1/14) cos 7x − (1/6) cos 3x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ cos 2x sen 4x dx</p>
+          <ol class="pasos">
+            <li>Es sen4x cos2x: sen A cos B, con A=4x, B=2x.</li>
+            <li>(1/2)[sen6x + sen2x]; se integra cada término.</li>
+          </ol>
+          <p class="res">Resultado: −(1/12) cos 6x − (1/4) cos 2x + C</p>
+        </div>
+      </section>
       <div class="pie-nav"><a href="capitulo2.html">← Capítulo 2</a><a href="capitulo4.html">Capítulo 4 →</a>
       </div>
     </main>

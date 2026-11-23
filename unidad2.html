@@ -1,0 +1,591 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Unidad 2 · Integrales trigonométricas y métodos de integración</title><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
+  <header class="barra">
+    <div>
+      <div class="marca">
+        <div class="logos">
+          <img alt="Universidad Autónoma de Tamaulipas" src="img/logo-uat.png" style="height:40px"/>
+          <img alt="Facultad de Ingeniería y Ciencias" src="img/logo-fic.png" style="height:34px"/>
+        </div>
+        <strong><a href="index.html" style="color:inherit;text-decoration:none">Cálculo Integral</a></strong>
+      </div><span><a href="index.html" style="color:inherit">← Inicio</a></span>
+    </div>
+  </header>
+  <div class="cuerpo">
+    <nav class="indice">
+      <h2>Unidades</h2>
+      <ol>
+        <li><a href="unidad1.html">Unidad 1. Sumas e integrales inmediatas</a></li>
+        <li><a class="act" href="unidad2.html">Unidad 2. Integrales trigonométricas y métodos de integración</a></li>
+        <li><a href="unidad3.html">Unidad 3. Aplicaciones de la integral</a></li>
+      </ol>
+      <h2 class="sep">En esta página</h2>
+      <ol>
+        <li><a href="#s1">Ejercicio 8 · Potencias impares de seno y coseno</a></li>
+        <li><a href="#s2">Ejercicio 9 · Potencias de tangente y cotangente</a></li>
+        <li><a href="#s3">Ejercicio 10 · Potencias de secante y cosecante</a></li>
+        <li><a href="#s4">Ejercicio 11 · Potencias pares de seno y coseno</a></li>
+        <li><a href="#s5">Ejercicio 12 · Productos sen mx · cos nx y similares</a></li>
+        <li><a href="#s6">Ejercicio 13 · Sustitución trigonométrica</a></li>
+        <li><a href="#s7">Ejercicio 14 · Integración por partes</a></li>
+        <li><a href="#s8">Ejercicio 15 · Fracciones parciales</a></li>
+      </ol>
+    </nav>
+    <main>
+      <p class="cap">Unidad 2 · Ejercicios 8 al 15</p>
+      <h1 style="margin-top:0">Integrales trigonométricas y métodos de integración</h1>
+      <p>Potencias y productos de funciones trigonométricas, sustitución trigonométrica, integración por partes y fracciones parciales.</p>
+      <section>
+        <h2>Potencias impares de seno y coseno</h2>
+        <p>El libro agrupa estos ejercicios en la sección de potencias de funciones trigonométricas. Cuando el exponente de seno o de coseno es impar, se separa un factor de esa función para formar la diferencial y el resto se transforma con sen²x + cos²x = 1.</p>
+        <div class="formula"><small>Caso: exponente impar</small>∫ sen<sup>n</sup>x dx = ∫ sen<sup>n−1</sup>x · sen x dx = ∫ (1−cos²x)<sup>(n−1)/2</sup> sen x dx
+        </div>
+        <figure>
+          <img alt="Esquema de separar un factor de seno o coseno" src="img/fig3-1.png"/>
+          <figcaption>Figura 2.1. Reducción de una potencia impar.</figcaption>
+        </figure>
+        <h3 id="s1">Ejercicio 8 · Potencias impares de seno y coseno</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ sen³x dx</p>
+          <ol class="pasos">
+            <li>El exponente de seno es impar (3); se separa un factor: sen³x = sen²x · senx.</li>
+            <li>Se usa sen²x = 1 − cos²x, y se propone v = cosx, dv = −senx dx.</li>
+            <li>∫(1−v²)(−dv) = −∫dv + ∫v²dv = −v + v³/3.</li>
+          </ol>
+          <p class="res">Resultado: −cos x + (1/3) cos³x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ cos⁵x dx</p>
+          <ol class="pasos">
+            <li>El exponente de coseno es impar (5): cos⁵x = cos⁴x · cosx = (cos²x)² · cosx.</li>
+            <li>Se usa cos²x = 1 − sen²x y se propone v = senx, dv = cosx dx.</li>
+            <li>∫(1−v²)²dv = ∫(1 − 2v² + v⁴)dv = v − (2/3)v³ + (1/5)v⁵.</li>
+          </ol>
+          <p class="res">Resultado: sen x − (2/3) sen³x + (1/5) sen⁵x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ sen³x cos²x dx</p>
+          <ol class="pasos">
+            <li>El exponente de seno es impar; se separa senx y se deja cos²x intacto: sen²x cos²x senx dx.</li>
+            <li>Con sen²x = 1−cos²x y v = cosx, dv = −senx dx: ∫(1−v²)v²(−dv).</li>
+            <li>= −∫(v² − v⁴)dv = −v³/3 + v⁵/5.</li>
+          </ol>
+          <p class="res">Resultado: −(1/3) cos³x + (1/5) cos⁵x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ sen²x cos³x dx</p>
+          <ol class="pasos">
+            <li>Ahora el exponente impar es el de coseno (3); se separa cosx: cos²x senx² cosx dx... se deja sen²x y cos²x cosx dx.</li>
+            <li>Con cos²x = 1−sen²x y v = senx, dv = cosx dx: ∫v²(1−v²)dv.</li>
+            <li>= ∫(v² − v⁴)dv = v³/3 − v⁵/5.</li>
+          </ol>
+          <p class="res">Resultado: (1/3) sen³x − (1/5) sen⁵x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ cos³2x dx</p>
+          <ol class="pasos">
+            <li>Exponente impar con ángulo múltiple: cos³2x = cos²2x · cos2x = (1−sen²2x)cos2x.</li>
+            <li>Se propone v = sen2x, dv = 2cos2x dx, es decir cos2x dx = dv/2.</li>
+            <li>(1/2)∫(1−v²)dv = (1/2)(v − v³/3).</li>
+          </ol>
+          <p class="res">Resultado: (1/2) sen 2x − (1/6) sen³2x + C</p>
+        </div>
+      </section>
+      <section>
+        <h2>Potencias de tangente y cotangente</h2>
+        <p>Se usa tan²x = sec²x − 1 (o cot²x = csc²x − 1) para separar un factor sec²x o csc²x, que es inmediato, y reducir el exponente restante.</p>
+        <div class="formula"><small>Identidad clave</small>tan²x = sec²x − 1    cot²x = csc²x − 1
+        </div>
+        <h3 id="s2">Ejercicio 9 · Potencias de tangente y cotangente</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ tan³x dx</p>
+          <ol class="pasos">
+            <li>Se separa tan²x: tan³x = tanx · tan²x, y se usa tan²x = sec²x − 1.</li>
+            <li>∫tanx(sec²x−1)dx = ∫tanx sec²x dx − ∫tanx dx.</li>
+            <li>La primera es inmediata con v=tanx; la segunda es −ln|cosx|.</li>
+          </ol>
+          <p class="res">Resultado: (1/2) tan²x + ln |cos x| + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ cot³x dx</p>
+          <ol class="pasos">
+            <li>De forma análoga, cot³x = cotx(csc²x − 1).</li>
+            <li>∫cotx csc²x dx − ∫cotx dx, con v = cotx en la primera.</li>
+          </ol>
+          <p class="res">Resultado: −(1/2) cot²x − ln |sen x| + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ tan⁴x dx</p>
+          <ol class="pasos">
+            <li>Se separa tan²x: tan⁴x = tan²x(sec²x − 1) = tan²x sec²x − tan²x.</li>
+            <li>∫tan²x sec²x dx es inmediata (v=tanx); para ∫tan²x dx se usa de nuevo tan²x=sec²x−1.</li>
+            <li>tan³x/3 − (tanx − x).</li>
+          </ol>
+          <p class="res">Resultado: (1/3) tan³x − tan x + x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ cot⁴x dx</p>
+          <ol class="pasos">
+            <li>cot⁴x = cot²x(csc²x − 1) = cot²x csc²x − cot²x.</li>
+            <li>∫cot²x csc²x dx es inmediata; ∫cot²x dx = ∫(csc²x−1)dx = −cotx − x.</li>
+          </ol>
+          <p class="res">Resultado: −(1/3) cot³x + cot x + x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ tan³2x dx</p>
+          <ol class="pasos">
+            <li>Con ángulo múltiple: tan³2x = tan2x(sec²2x − 1).</li>
+            <li>∫tan2x sec²2x dx − ∫tan2x dx, con v = 2x en cada cambio.</li>
+          </ol>
+          <p class="res">Resultado: (1/4) tan²2x + (1/2) ln |cos 2x| + C</p>
+        </div>
+      </section>
+      <section>
+        <h2>Potencias de secante y cosecante</h2>
+        <p>Cuando el exponente de secante o cosecante es par, se separa sec²x (o csc²x) para la diferencial y el resto se transforma con 1+tan²x = sec²x.</p>
+        <div class="formula"><small>Identidad clave</small>sec²x = 1 + tan²x    csc²x = 1 + cot²x
+        </div>
+        <figure>
+          <img alt="Triángulo con tan x y sec x" src="img/fig3-2.png"/>
+          <figcaption>Figura 2.2. Relación entre tangente y secante.</figcaption>
+        </figure>
+        <h3 id="s3">Ejercicio 10 · Potencias de secante y cosecante</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ sec⁴x dx</p>
+          <ol class="pasos">
+            <li>Se separa sec²x: sec⁴x = sec²x · sec²x, y se usa sec²x = 1 + tan²x en el primer factor.</li>
+            <li>∫(1+tan²x) sec²x dx, con v = tanx, dv = sec²x dx.</li>
+            <li>∫(1+v²)dv = v + v³/3.</li>
+          </ol>
+          <p class="res">Resultado: tan x + (1/3) tan³x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ csc⁴x dx</p>
+          <ol class="pasos">
+            <li>csc⁴x = csc²x · csc²x = (1+cot²x) csc²x.</li>
+            <li>Con v = cotx, dv = −csc²x dx: −∫(1+v²)dv = −(v+v³/3).</li>
+          </ol>
+          <p class="res">Resultado: −cot x − (1/3) cot³x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ sec⁴2x dx</p>
+          <ol class="pasos">
+            <li>sec⁴2x = (1+tan²2x) sec²2x, con v = tan2x, dv = 2sec²2x dx.</li>
+            <li>(1/2)∫(1+v²)dv = (1/2)(v+v³/3).</li>
+          </ol>
+          <p class="res">Resultado: (1/2) tan 2x + (1/6) tan³2x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ csc⁴3x dx</p>
+          <ol class="pasos">
+            <li>csc⁴3x = (1+cot²3x) csc²3x, con v = cot3x, dv = −3csc²3x dx.</li>
+            <li>−(1/3)∫(1+v²)dv = −(1/3)(v+v³/3).</li>
+          </ol>
+          <p class="res">Resultado: −(1/3) cot 3x − (1/9) cot³3x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ tan²x sec⁴x dx</p>
+          <ol class="pasos">
+            <li>Se deja sec²x para formar dv y se transforma el resto: tan²x sec²x · sec²x = tan²x(1+tan²x) sec²x.</li>
+            <li>Con v = tanx, dv = sec²x dx: ∫v²(1+v²)dv = ∫(v²+v⁴)dv.</li>
+          </ol>
+          <p class="res">Resultado: (1/3) tan³x + (1/5) tan⁵x + C</p>
+        </div>
+      </section>
+      <section>
+        <h2>Potencias pares de seno y coseno</h2>
+        <p>Cuando el exponente es par y no hay un factor impar que separar, se usan las identidades de ángulo medio, aplicándolas una o varias veces según el exponente.</p>
+        <div class="formula"><small>Identidades de ángulo medio</small>sen²x = (1 − cos 2x)/2    cos²x = (1 + cos 2x)/2
+        </div>
+        <h3 id="s4">Ejercicio 11 · Potencias pares de seno y coseno</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ sen²x dx</p>
+          <ol class="pasos">
+            <li>El exponente es par; se usa la identidad de ángulo medio sen²x = (1−cos2x)/2.</li>
+            <li>∫(1/2)dx − ∫(1/2)cos2x dx = x/2 − (1/4)sen2x.</li>
+          </ol>
+          <p class="res">Resultado: x/2 − (1/4) sen 2x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ cos²x dx</p>
+          <ol class="pasos">
+            <li>Se usa cos²x = (1+cos2x)/2.</li>
+            <li>∫(1/2)dx + ∫(1/2)cos2x dx = x/2 + (1/4)sen2x.</li>
+          </ol>
+          <p class="res">Resultado: x/2 + (1/4) sen 2x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ sen⁴x dx</p>
+          <ol class="pasos">
+            <li>sen⁴x = (sen²x)² = [(1−cos2x)/2]² = (1/4)(1 − 2cos2x + cos²2x).</li>
+            <li>Se integra cos²2x con la misma identidad de ángulo medio otra vez: cos²2x = (1+cos4x)/2.</li>
+            <li>Al desarrollar y simplificar se agrupan los términos.</li>
+          </ol>
+          <p class="res">Resultado: (3/8)x − (1/4) sen 2x + (1/32) sen 4x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ cos⁴x dx</p>
+          <ol class="pasos">
+            <li>cos⁴x = [(1+cos2x)/2]² = (1/4)(1 + 2cos2x + cos²2x), con cos²2x = (1+cos4x)/2 de nuevo.</li>
+          </ol>
+          <p class="res">Resultado: (3/8)x + (1/4) sen 2x + (1/32) sen 4x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ sen²3x dx</p>
+          <ol class="pasos">
+            <li>Se usa sen²3x = (1−cos6x)/2 (el ángulo doble de 3x es 6x).</li>
+            <li>∫(1/2)dx − (1/2)∫cos6x dx = x/2 − (1/12)sen6x.</li>
+          </ol>
+          <p class="res">Resultado: x/2 − (1/12) sen 6x + C</p>
+        </div>
+      </section>
+      <section>
+        <h2>Productos de senos y cosenos de ángulos distintos</h2>
+        <p>Cuando el integrando es un producto como sen mx · cos nx, con ángulos diferentes, se convierte en una suma con las identidades de producto a suma, y cada término se integra de forma inmediata.</p>
+        <div class="formula"><small>Identidades de producto a suma</small>sen A cos B = ½[sen(A+B) + sen(A−B)]<br/>sen A sen B = ½[cos(A−B) − cos(A+B)]<br/>cos A cos B = ½[cos(A−B) + cos(A+B)]
+        </div>
+        <figure>
+          <img alt="Tabla de identidades de producto a suma" src="img/fig3-3.png"/>
+          <figcaption>Figura 2.3. Conversión de producto a suma.</figcaption>
+        </figure>
+        <h3 id="s5">Ejercicio 12 · Productos sen mx · cos nx y similares</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ sen 2x cos 3x dx</p>
+          <ol class="pasos">
+            <li>Se usa sen A cos B = (1/2)[sen(A+B) + sen(A−B)], con A=2x, B=3x.</li>
+            <li>sen5x + sen(−x) = sen5x − senx; se integra cada término.</li>
+            <li>∫(1/2)(sen5x − senx)dx = (1/2)[−cos5x/5 + cosx].</li>
+          </ol>
+          <p class="res">Resultado: −(1/10) cos 5x + (1/2) cos x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ sen 4x sen 2x dx</p>
+          <ol class="pasos">
+            <li>Se usa sen A sen B = (1/2)[cos(A−B) − cos(A+B)], con A=4x, B=2x.</li>
+            <li>(1/2)[cos2x − cos6x]; se integra cada término.</li>
+          </ol>
+          <p class="res">Resultado: (1/4) sen 2x − (1/12) sen 6x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ cos 5x cos 3x dx</p>
+          <ol class="pasos">
+            <li>Se usa cos A cos B = (1/2)[cos(A−B) + cos(A+B)], con A=5x, B=3x.</li>
+            <li>(1/2)[cos2x + cos8x]; se integra cada término.</li>
+          </ol>
+          <p class="res">Resultado: (1/4) sen 2x + (1/16) sen 8x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ sen 5x cos 2x dx</p>
+          <ol class="pasos">
+            <li>sen A cos B = (1/2)[sen(A+B)+sen(A−B)], con A=5x, B=2x.</li>
+            <li>(1/2)[sen7x + sen3x]; se integra cada término.</li>
+          </ol>
+          <p class="res">Resultado: −(1/14) cos 7x − (1/6) cos 3x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ cos 2x sen 4x dx</p>
+          <ol class="pasos">
+            <li>Es sen4x cos2x: sen A cos B, con A=4x, B=2x.</li>
+            <li>(1/2)[sen6x + sen2x]; se integra cada término.</li>
+          </ol>
+          <p class="res">Resultado: −(1/12) cos 6x − (1/4) cos 2x + C</p>
+        </div>
+      </section>
+      <section>
+        <h2>Sustitución trigonométrica</h2>
+        <p>Se usa cuando el integrando contiene una raíz de la forma √(a²−u²), √(a²+u²) o √(u²−a²), que no se resuelven por ningún método anterior. El formulario de casos propone, para cada una, una sustitución con seno, tangente o secante que elimina la raíz.</p>
+        <div class="cols">
+          <div class="formula"><small>Caso 1: √(a²−u²)</small>u = a sen θ  ·  √(a²−u²) = a cos θ
+          </div>
+          <div class="formula"><small>Caso 2: √(a²+u²)</small>u = a tan θ  ·  √(a²+u²) = a sec θ
+          </div>
+        </div>
+        <div class="formula"><small>Caso 3: √(u²−a²)</small>u = a sec θ  ·  √(u²−a²) = a tan θ
+        </div>
+        <figure>
+          <img alt="Los tres triángulos de referencia de la sustitución trigonométrica" src="img/fig4-1.png"/>
+          <figcaption>Figura 2.4. Triángulos para los casos 1, 2 y 3.</figcaption>
+        </figure>
+        <h3 id="s6">Ejercicio 13 · Sustitución trigonométrica</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ dx / [x² √(16 − x²)]  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 1 del formulario</span></p>
+          <ol class="pasos">
+            <li>La expresión es √(a²−u²) con a=4, u=x, así que se propone x = 4 sen θ, dx = 4 cos θ dθ.</li>
+            <li>√(16−x²) = √(16−16sen²θ) = 4cos θ.</li>
+            <li>Se sustituye: ∫ 4cosθ dθ / [16sen²θ · 4cosθ] = (1/16)∫csc²θ dθ = −(1/16)cot θ.</li>
+            <li>Con el triángulo de referencia (cateto opuesto x, hipotenusa 4), cot θ = √(16−x²)/x.</li>
+          </ol>
+          <p class="res">Resultado: −√(16 − x²) / (16x) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ dx / √(x² + 25)  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 2 del formulario</span></p>
+          <ol class="pasos">
+            <li>La expresión es √(a²+u²) con a=5, u=x, así que se propone x = 5 tan θ, dx = 5sec²θ dθ.</li>
+            <li>√(x²+25) = 5 sec θ.</li>
+            <li>∫ 5sec²θ dθ / (5secθ) = ∫secθ dθ = ln|secθ + tanθ|.</li>
+            <li>Con el triángulo (cateto opuesto x, adyacente 5, hipotenusa √(x²+25)): secθ=√(x²+25)/5, tanθ=x/5.</li>
+          </ol>
+          <p class="res">Resultado: ln (x + √(x² + 25)) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ x² dx / √(x² + 9)  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 2 del formulario</span></p>
+          <ol class="pasos">
+            <li>Con a=3: x = 3tanθ, dx = 3sec²θ dθ, √(x²+9) = 3secθ.</li>
+            <li>∫ (9tan²θ)(3sec²θ)dθ / (3secθ) = 9∫tan²θ secθ dθ = 9∫(sec³θ − secθ)dθ.</li>
+            <li>∫sec³θ dθ se resuelve por partes (fórmula conocida): (1/2)[secθ tanθ + ln|secθ+tanθ|].</li>
+            <li>Se regresa a x con el triángulo del caso 2 y se simplifica.</li>
+          </ol>
+          <p class="res">Resultado: (x/2)√(x² + 9) − (9/2) ln (x + √(x² + 9)) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ dx / [x² √(x² − 4)]  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 3 del formulario</span></p>
+          <ol class="pasos">
+            <li>La expresión es √(u²−a²) con a=2, u=x, así que se propone x = 2secθ, dx = 2secθ tanθ dθ.</li>
+            <li>√(x²−4) = 2 tanθ.</li>
+            <li>∫ 2secθ tanθ dθ / [4sec²θ · 2tanθ] = (1/4)∫cosθ dθ = (1/4)senθ.</li>
+            <li>Con el triángulo (hipotenusa x, adyacente 2, opuesto √(x²−4)): senθ = √(x²−4)/x.</li>
+          </ol>
+          <p class="res">Resultado: √(x² − 4) / (4x) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ √(x² − 16) / x dx  <span class="nota" style="display:inline;padding:2px 6px;margin:0">Caso 3 del formulario</span></p>
+          <ol class="pasos">
+            <li>Con a=4: x = 4secθ, dx = 4secθ tanθ dθ, √(x²−16) = 4tanθ.</li>
+            <li>∫ (4tanθ)(4secθ tanθ)dθ / (4secθ) = 4∫tan²θ dθ = 4∫(sec²θ−1)dθ.</li>
+            <li>= 4(tanθ − θ).</li>
+            <li>Del triángulo: tanθ = √(x²−16)/4 y θ = arcsec(x/4).</li>
+          </ol>
+          <p class="res">Resultado: √(x² − 16) − 4 arcsec(x/4) + C</p>
+        </div>
+      </section>
+      <section>
+        <h2>Integración por partes</h2>
+        <p>Se aplica cuando el integrando es un producto de dos funciones de distinto tipo (polinomio por exponencial, polinomio por trigonométrica, logaritmo, etc.) y no hay una sustitución simple que lo resuelva.</p>
+        <div class="formula"><small>Fórmula de partes</small>∫ u dv = u v − ∫ v du
+        </div>
+        <p>Cada ejemplo se resuelve primero paso a paso con la fórmula de partes y después se muestra según la clasificación por casos (orden LIATE para elegir u, y el método tabular como atajo cuando hay que aplicar partes varias veces).</p>
+        <figure>
+          <img alt="Esquema del método tabular (columnas D e I)" src="img/fig4-2.png"/>
+          <figcaption>Figura 2.5. Método tabular para integración por partes repetida.</figcaption>
+        </figure>
+        <h3 id="s7">Ejercicio 14 · Integración por partes</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ x e²ˣ dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
+          <ol class="pasos">
+            <li>Se elige u = x (se deriva fácil) y dv = e²ˣdx; entonces du = dx, v = e²ˣ/2.</li>
+            <li>Se aplica la fórmula: ∫u dv = uv − ∫v du.</li>
+            <li>= x·e²ˣ/2 − ∫e²ˣ/2 dx = xe²ˣ/2 − e²ˣ/4.</li>
+          </ol>
+          <p class="sub-label">Según la clasificación de casos (LIATE y método tabular)</p>
+          <ol class="pasos">
+            <li>Es el <b>Caso: polinomio × exponencial</b>; por LIATE se deriva el polinomio (u) y se integra la exponencial (dv).</li>
+            <li>Se arma la tabla: columna D (derivadas de x): x, 1, 0; columna I (integrales de e²ˣ): e²ˣ/2, e²ˣ/4.</li>
+            <li>Se multiplica en diagonal alternando signos + y −, y se detiene cuando D llega a 0: +x·(e²ˣ/2) − 1·(e²ˣ/4).</li>
+          </ol>
+          <p class="res">Resultado: (x/2) e²ˣ − (1/4) e²ˣ + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ x cos x dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
+          <ol class="pasos">
+            <li>u = x, dv = cosx dx; du = dx, v = senx.</li>
+            <li>∫u dv = uv − ∫v du = x senx − ∫senx dx.</li>
+          </ol>
+          <p class="sub-label">Según la clasificación de casos (LIATE y método tabular)</p>
+          <ol class="pasos">
+            <li>Es el <b>Caso: polinomio × trigonométrica</b>; u = x (se deriva), dv = cosx dx (se integra).</li>
+            <li>Tabla: columna D: x, 1, 0; columna I (integrales de cosx): senx, −cosx.</li>
+            <li>Diagonales con signos +, −: +x·senx − 1·(−cosx) = x senx + cosx.</li>
+          </ol>
+          <p class="res">Resultado: x sen x + cos x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ x² eˣ dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
+          <ol class="pasos">
+            <li>u = x², dv = eˣdx; du = 2x dx, v = eˣ. Primera aplicación: x²eˣ − 2∫xeˣdx.</li>
+            <li>La integral restante, ∫xeˣdx, se vuelve a resolver por partes (u=x, dv=eˣdx): xeˣ − eˣ.</li>
+            <li>Se sustituye de regreso: x²eˣ − 2(xeˣ − eˣ).</li>
+          </ol>
+          <p class="sub-label">Según la clasificación de casos (LIATE y método tabular)</p>
+          <ol class="pasos">
+            <li>Es el <b>Caso: polinomio × exponencial</b>, pero el polinomio es de grado 2, así que la tabla tiene un renglón más que en el Ejemplo 1.</li>
+            <li>Tabla: columna D: x², 2x, 2, 0; columna I (integrales repetidas de eˣ): eˣ, eˣ, eˣ.</li>
+            <li>Diagonales con signos +,−,+: +x²·eˣ − 2x·eˣ + 2·eˣ (se detiene en D = 0).</li>
+          </ol>
+          <p class="res">Resultado: eˣ(x² − 2x + 2) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ x sen 3x dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
+          <ol class="pasos">
+            <li>u = x, dv = sen3x dx; du = dx, v = −cos3x/3.</li>
+            <li>= −x cos3x/3 + (1/3)∫cos3x dx = −xcos3x/3 + (1/9)sen3x.</li>
+          </ol>
+          <p class="sub-label">Según la clasificación de casos (LIATE y método tabular)</p>
+          <ol class="pasos">
+            <li><b>Caso: polinomio × trigonométrica</b> (igual que el Ejemplo 2, con ángulo múltiple).</li>
+            <li>Tabla: columna D: x, 1, 0; columna I (integrales de sen3x): −cos3x/3, −sen3x/9.</li>
+            <li>Diagonales +,−: +x·(−cos3x/3) − 1·(−sen3x/9) = −xcos3x/3 + sen3x/9.</li>
+          </ol>
+          <p class="res">Resultado: −(x/3) cos 3x + (1/9) sen 3x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ ln x dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
+          <ol class="pasos">
+            <li>Se elige u = ln x y dv = dx (el otro factor implícito); du = dx/x, v = x.</li>
+            <li>∫u dv = uv − ∫v du = x ln x − ∫x·(1/x)dx = x ln x − ∫dx.</li>
+          </ol>
+          <p class="sub-label">Según la clasificación de casos (LIATE y método tabular)</p>
+          <ol class="pasos">
+            <li>Es el <b>Caso: función logarítmica sola</b>; en LIATE, la logarítmica siempre se elige como u, nunca como dv.</li>
+            <li>Aquí no conviene la tabla, porque dv = dx no vuelve a integrarse de forma útil; se resuelve en un solo paso.</li>
+            <li>u = ln x (se deriva), dv = dx (se integra): du = dx/x, v = x.</li>
+          </ol>
+          <p class="res">Resultado: x ln x − x + C</p>
+        </div>
+      </section>
+      <section>
+        <h2>Fracciones parciales</h2>
+        <p>Se aplica para integrar una fracción propia P(x)/Q(x). Se factoriza Q(x) y, según el formulario de casos, se descompone la fracción en una suma de fracciones más simples, cuyo denominador es cada factor (o potencia de factor) de Q(x).</p>
+        <div class="cols">
+          <div class="formula"><small>Caso 1 · Lineales sin repetir</small>P(x)/Q(x) = A₁/(a₁x+b₁) + A₂/(a₂x+b₂) + …
+          </div>
+          <div class="formula"><small>Caso 2 · Lineal repetido n veces</small>A₁/(ax+b)<sup>n</sup> + A₂/(ax+b)<sup>n−1</sup> + … + A<sub>n</sub>/(ax+b)
+          </div>
+        </div>
+        <div class="formula"><small>Caso 3 · Cuadrático irreducible sin repetir</small>(A₁x+B₁)/(a₁x²+b₁x+c₁) + (A₂x+B₂)/(a₂x²+b₂x+c₂) + …
+        </div>
+        <figure>
+          <img alt="Factorización de Q(x) antes de plantear las fracciones" src="img/fig4-3.png"/>
+          <figcaption>Figura 2.6. Identificación del caso según los factores de Q(x).</figcaption>
+        </figure>
+        <p>Cada ejemplo se resuelve primero de forma intuitiva (planteando A, B, D y despejando) y después se identifica explícitamente con el caso del formulario y su fórmula general.</p>
+        <h3 id="s8">Ejercicio 15 · Fracciones parciales</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ (x+1) / [(x−2)(x+3)] dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
+          <ol class="pasos">
+            <li>El integrando es una fracción propia (el numerador tiene menor grado que el denominador) con dos factores lineales distintos.</li>
+            <li>Se propone (x+1)/[(x−2)(x+3)] = A/(x−2) + B/(x+3) y se multiplica por el denominador común: x+1 = A(x+3) + B(x−2).</li>
+            <li>Con x=2: 3=5A ⇒ A=3/5. Con x=−3: −2=−5B ⇒ B=2/5.</li>
+            <li>Se integra cada fracción simple por separado.</li>
+          </ol>
+          <p class="sub-label">Según el formulario (Caso 1: factores lineales, no se repiten)</p>
+          <ol class="pasos">
+            <li>Q(x) = (x−2)(x+3) es producto de factores lineales (a₁x+b₁)(a₂x+b₂), ninguno repetido: es el Caso 1 del formulario.</li>
+            <li>Fórmula general del Caso 1: P(x)/Q(x) = A₁/(a₁x+b₁) + A₂/(a₂x+b₂).</li>
+            <li>Se identifica a₁=1,b₁=−2,a₂=1,b₂=3 y se obtienen A₁=3/5, A₂=2/5, igual que arriba.</li>
+          </ol>
+          <p class="res">Resultado: (3/5) ln|x−2| + (2/5) ln|x+3| + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ dx / [(x−1)(x+2)]</p>
+          <p class="sub-label">Explicación paso a paso</p>
+          <ol class="pasos">
+            <li>1/[(x−1)(x+2)] = A/(x−1) + B/(x+2).</li>
+            <li>1 = A(x+2) + B(x−1). Con x=1: A=1/3. Con x=−2: B=−1/3.</li>
+          </ol>
+          <p class="sub-label">Según el formulario (Caso 1: factores lineales, no se repiten)</p>
+          <ol class="pasos">
+            <li>Igual que el ejemplo anterior, Q(x) es producto de dos factores lineales distintos: Caso 1.</li>
+            <li>Se aplica directamente P(x)/Q(x) = A₁/(a₁x+b₁) + A₂/(a₂x+b₂) con P(x)=1, obteniendo A₁=1/3, A₂=−1/3.</li>
+          </ol>
+          <p class="res">Resultado: (1/3) ln|x−1| − (1/3) ln|x+2| + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ dx / [x(x−1)²]</p>
+          <p class="sub-label">Explicación paso a paso</p>
+          <ol class="pasos">
+            <li>El factor (x−1) aparece elevado al cuadrado, así que se propone 1/[x(x−1)²] = A/x + B/(x−1) + D/(x−1)².</li>
+            <li>1 = A(x−1)² + Bx(x−1) + Dx. Con x=0: A=1. Con x=1: D=1.</li>
+            <li>Comparando el coeficiente de x²: 0 = A+B ⇒ B=−1.</li>
+            <li>Se integra cada término; el de D/(x−1)² da −D/(x−1).</li>
+          </ol>
+          <p class="sub-label">Según el formulario (Caso 2: factor lineal que se repite)</p>
+          <ol class="pasos">
+            <li>Q(x) = x(x−1)² tiene el factor (x−1) repetido 2 veces: es el Caso 2 del formulario.</li>
+            <li>Fórmula general del Caso 2 para (a₁x+b₁) repetido n veces: A₁/(a₁x+b₁)ⁿ + A₂/(a₁x+b₁)ⁿ⁻¹ + … + Aₙ/(a₁x+b₁), más un término A/x por el factor simple restante.</li>
+            <li>Con n=2 y a₁x+b₁=x−1 se obtiene A₁/(x−1)² + A₂/(x−1), que corresponde a D=1 y B=−1 de la columna anterior.</li>
+          </ol>
+          <p class="res">Resultado: ln|x| − ln|x−1| − 1/(x−1) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ (x+4) / (x+1)² dx</p>
+          <p class="sub-label">Explicación paso a paso</p>
+          <ol class="pasos">
+            <li>(x+4)/(x+1)² = A/(x+1) + B/(x+1)².</li>
+            <li>x+4 = A(x+1) + B. Con x=−1: B=3. Comparando coeficientes de x: A=1.</li>
+          </ol>
+          <p class="sub-label">Según el formulario (Caso 2: factor lineal que se repite)</p>
+          <ol class="pasos">
+            <li>Q(x) = (x+1)² es un único factor lineal repetido 2 veces: Caso 2 con n=2.</li>
+            <li>Fórmula general: A₁/(ax+b)² + A₂/(ax+b). Aquí a=1, b=1, A₁=3 (el término sin dividir) y A₂=1.</li>
+          </ol>
+          <p class="res">Resultado: ln|x+1| − 3/(x+1) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ x dx / [(x²+1)(x+1)]</p>
+          <p class="sub-label">Explicación paso a paso</p>
+          <ol class="pasos">
+            <li>x/[(x²+1)(x+1)] = (Ax+B)/(x²+1) + D/(x+1).</li>
+            <li>x = (Ax+B)(x+1) + D(x²+1). Con x=−1: −1=2D ⇒ D=−1/2.</li>
+            <li>Comparando coeficientes de x²: 0=A+D ⇒ A=1/2. Con el término independiente: 0=B+D ⇒ B=1/2.</li>
+            <li>El término (x/2+1/2)/(x²+1) se separa en x/(x²+1) (logaritmo) más 1/(x²+1) (arco tangente).</li>
+          </ol>
+          <p class="sub-label">Según el formulario (Caso 3: factor cuadrático irreducible, no se repite)</p>
+          <ol class="pasos">
+            <li>Q(x) = (x²+1)(x+1) tiene un factor cuadrático irreducible x²+1 (no tiene raíces reales) que no se repite: es el Caso 3 para ese factor, combinado con un Caso 1 para (x+1).</li>
+            <li>Fórmula general del Caso 3: (A₁x+B₁)/(a₁x²+b₁x+c₁), que aquí da (Ax+B)/(x²+1) con A=1/2, B=1/2.</li>
+            <li>El factor lineal (x+1) aporta el término D/(x+1) del Caso 1, con D=−1/2, igual que arriba.</li>
+          </ol>
+          <p class="res">Resultado: (1/4) ln(x²+1) + (1/2) arctan x − (1/2) ln|x+1| + C</p>
+        </div>
+      </section>
+      <div class="pie-nav"><a href="unidad1.html">← Unidad 1</a><a href="unidad3.html">Unidad 3 →</a>
+      </div>
+    </main>
+  </div>
+  <footer>Cálculo Integral · CONAMAT, Pearson (2010)
+</footer></body></html>

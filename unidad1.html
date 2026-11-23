@@ -1,0 +1,639 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Unidad 1 · Sumas e integrales inmediatas</title><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
+  <header class="barra">
+    <div>
+      <div class="marca">
+        <div class="logos">
+          <img alt="Universidad Autónoma de Tamaulipas" src="img/logo-uat.png" style="height:40px"/>
+          <img alt="Facultad de Ingeniería y Ciencias" src="img/logo-fic.png" style="height:34px"/>
+        </div>
+        <strong><a href="index.html" style="color:inherit;text-decoration:none">Cálculo Integral</a></strong>
+      </div><span><a href="index.html" style="color:inherit">← Inicio</a></span>
+    </div>
+  </header>
+  <div class="cuerpo">
+    <nav class="indice">
+      <h2>Unidades</h2>
+      <ol>
+        <li><a class="act" href="unidad1.html">Unidad 1. Sumas e integrales inmediatas</a></li>
+        <li><a href="unidad2.html">Unidad 2. Integrales trigonométricas y métodos de integración</a></li>
+        <li><a href="unidad3.html">Unidad 3. Aplicaciones de la integral</a></li>
+      </ol>
+      <h2 class="sep">En esta página</h2>
+      <ol>
+        <li><a href="#s1">Ejercicio 1.1 · Sumas por desarrollo</a></li>
+        <li><a href="#s2">Ejercicio 1.2 · Sumas con propiedades</a></li>
+        <li><a href="#s3">Ejercicio 2.1 · Aproximación con n rectángulos</a></li>
+        <li><a href="#s4">Ejercicio 2.2 · Área con sumas superiores</a></li>
+        <li><a href="#s5">Ejercicio 2.3 · Área con sumas inferiores</a></li>
+        <li><a href="#s6">Ejercicio 3 · Integrales con la fórmula de potencias</a></li>
+        <li><a href="#s7">Ejercicio 4 · Integrales exponenciales</a></li>
+        <li><a href="#s8">Ejercicio 5 · Integrales trigonométricas directas</a></li>
+        <li><a href="#s9">Ejercicio 6 · Identificación directa de a y v</a></li>
+        <li><a href="#s10">Ejercicio 7 · Con cambio de variable o trinomio cuadrado</a></li>
+      </ol>
+    </nav>
+    <main>
+      <p class="cap">Unidad 1 · Ejercicios 1 al 7</p>
+      <h1 style="margin-top:0">Sumas e integrales inmediatas</h1>
+      <p>Notación sigma, sumas de Riemann, fórmulas básicas de integración, cambio de variable y las formas que producen arco tangente, arco seno o logaritmo.</p>
+      <section>
+        <h2>Definición y propiedades</h2>
+        <p>La notación sigma abrevia una suma de términos que siguen una misma regla. Se lee: “suma de <i>f</i>(<i>i</i>) desde <i>i</i> = <i>m</i> hasta <i>n</i>”.</p>
+        <div class="formula"><small>Definición</small>Σ<sub><i>i</i>=<i>m</i></sub><sup><i>n</i></sup> <i>f</i>(<i>i</i>) = <i>f</i>(<i>m</i>) + <i>f</i>(<i>m</i>+1) + … + <i>f</i>(<i>n</i>)
+        </div>
+        <figure>
+          <img alt="Esquema de la notación sigma (límite inferior, superior y regla)" src="img/fig1-1.png"/>
+          <figcaption>Figura 1.1. Partes de la notación sigma.</figcaption>
+        </figure>
+        <h3 id="s1">Ejercicio 1.1 · Sumas por desarrollo</h3>
+        <p>Calcula el valor de cada suma escribiendo sus términos.</p>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">Σ<sub>i=1</sub><sup>4</sup> <i>i</i>²</p>
+          <ol class="pasos">
+            <li>Se sustituye <i>i</i> = 1, 2, 3, 4 en la expresión <i>i</i>².</li>
+            <li>Se escribe cada término: 1² + 2² + 3² + 4².</li>
+            <li>Se calcula: 1 + 4 + 9 + 16.</li>
+          </ol>
+          <p class="res">Resultado: 30</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">Σ<sub>k=1</sub><sup>5</sup> (2<i>k</i> + 1)</p>
+          <ol class="pasos">
+            <li>Se evalúa la expresión para <i>k</i> = 1, …, 5.</li>
+            <li>Los valores son 3, 5, 7, 9 y 11.</li>
+            <li>Se suman: 3 + 5 + 7 + 9 + 11.</li>
+          </ol>
+          <p class="res">Resultado: 35</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">Σ<sub>i=3</sub><sup>6</sup> <i>i</i> (el índice no empieza en 1)</p>
+          <ol class="pasos">
+            <li>El índice inicia en 3, así que los términos son <i>i</i> = 3, 4, 5, 6.</li>
+            <li>Se suman: 3 + 4 + 5 + 6.</li>
+          </ol>
+          <p class="res">Resultado: 18</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">Σ<sub>i=1</sub><sup>4</sup> 1/<i>i</i></p>
+          <ol class="pasos">
+            <li>Se escriben los términos: 1 + 1/2 + 1/3 + 1/4.</li>
+            <li>Denominador común 12: 12/12 + 6/12 + 4/12 + 3/12.</li>
+            <li>Se suman los numeradores: 25/12.</li>
+          </ol>
+          <p class="res">Resultado: 25/12</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">Σ<sub>n=0</sub><sup>3</sup> 2<sup><i>n</i></sup></p>
+          <ol class="pasos">
+            <li>El índice empieza en 0: 2⁰, 2¹, 2², 2³.</li>
+            <li>Los valores son 1, 2, 4 y 8.</li>
+            <li>Se suman: 1 + 2 + 4 + 8.</li>
+          </ol>
+          <p class="res">Resultado: 15</p>
+        </div>
+        <h3 id="s2">Ejercicio 1.2 · Sumas con propiedades</h3>
+        <p>Estas reglas y fórmulas evitan sumar término por término.</p>
+        <div class="cols">
+          <div class="formula"><small>Constante</small>Σ<sub><i>i</i>=1</sub><sup><i>n</i></sup> <i>c</i> = <i>c n</i>
+          </div>
+          <div class="formula"><small>Constante multiplicando</small>Σ<sub></sub><sup></sup> <i>c f</i>(<i>i</i>) = <i>c</i> Σ<sub></sub><sup></sup> <i>f</i>(<i>i</i>)
+          </div>
+          <div class="formula"><small>Suma de funciones</small>Σ<sub></sub><sup></sup> [<i>f</i>+<i>g</i>] = Σ<sub></sub><sup></sup> <i>f</i> + Σ<sub></sub><sup></sup> <i>g</i>
+          </div>
+          <div class="formula"><small>Suma de cubos</small>Σ<sub></sub><sup></sup> <i>i</i>³ = [<i>n</i>(<i>n</i>+1)/2]²
+          </div>
+        </div>
+        <figure>
+          <img alt="Tabla resumen de las fórmulas de sumas" src="img/fig1-2.png"/>
+          <figcaption>Figura 1.2. Fórmulas de sumas más usadas.</figcaption>
+        </figure>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">Σ<sub>i=1</sub><sup>10</sup> 5</p>
+          <ol class="pasos">
+            <li>Es la suma de una constante: Σ <i>c</i> = <i>c n</i>.</li>
+            <li>Aquí <i>c</i> = 5 y <i>n</i> = 10.</li>
+            <li>Se multiplica: 5 · 10.</li>
+          </ol>
+          <p class="res">Resultado: 50</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">Σ<sub>i=1</sub><sup>20</sup> <i>i</i></p>
+          <ol class="pasos">
+            <li>Se usa Σ <i>i</i> = <i>n</i>(<i>n</i>+1)/2 con <i>n</i> = 20.</li>
+            <li>Se sustituye: 20 · 21 / 2.</li>
+            <li>Se calcula: 420 / 2.</li>
+          </ol>
+          <p class="res">Resultado: 210</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">Σ<sub>i=1</sub><sup>10</sup> (3<i>i</i> + 2)</p>
+          <ol class="pasos">
+            <li>Se separa la suma: 3 Σ <i>i</i> + Σ 2.</li>
+            <li>Σ <i>i</i> = 10 · 11 / 2 = 55 y Σ 2 = 2 · 10 = 20.</li>
+            <li>Se sustituye: 3 · 55 + 20 = 165 + 20.</li>
+          </ol>
+          <p class="res">Resultado: 185</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">Σ<sub>i=1</sub><sup>6</sup> <i>i</i>²</p>
+          <ol class="pasos">
+            <li>Se usa Σ <i>i</i>² = <i>n</i>(<i>n</i>+1)(2<i>n</i>+1)/6 con <i>n</i> = 6.</li>
+            <li>Se sustituye: 6 · 7 · 13 / 6.</li>
+            <li>Se simplifica el 6: 7 · 13.</li>
+          </ol>
+          <p class="res">Resultado: 91</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">Σ<sub>i=1</sub><sup>5</sup> (<i>i</i>² − 2<i>i</i>)</p>
+          <ol class="pasos">
+            <li>Se separa: Σ <i>i</i>² − 2 Σ <i>i</i>.</li>
+            <li>Con <i>n</i> = 5: Σ <i>i</i>² = 5·6·11/6 = 55 y Σ <i>i</i> = 15.</li>
+            <li>Se resta: 55 − 2 · 15 = 55 − 30.</li>
+          </ol>
+          <p class="res">Resultado: 25</p>
+        </div>
+      </section>
+      <section>
+        <h2>Suma de Riemann</h2>
+        <p>El área bajo una curva se aproxima con rectángulos de base Δ<i>x</i> = (<i>b</i> − <i>a</i>)/<i>n</i>. Los <b>inscritos</b> (sumas inferiores) quedan por debajo de la curva y los <b>circunscritos</b> (sumas superiores) por encima; al aumentar <i>n</i> ambas aproximaciones se acercan al área real.</p>
+        <figure>
+          <img alt="Rectángulos inscritos y circunscritos sobre una misma curva" src="img/fig1-3.png"/>
+          <figcaption>Figura 1.3. Aproximación por defecto y por exceso.</figcaption>
+        </figure>
+        <h3 id="s3">Ejercicio 2.1 · Aproximación con n rectángulos</h3>
+        <p>Con un número fijo de rectángulos se obtiene una cota inferior y una superior del área.</p>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">Aproxima el área bajo <i>f</i>(<i>x</i>) = <i>x</i>² en [0, 2] con <i>n</i> = 4 rectángulos <b>inscritos</b>.</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = (2 − 0)/4 = 0.5.</li>
+            <li>Como <i>f</i> crece, los inscritos usan el extremo izquierdo: <i>x</i> = 0, 0.5, 1, 1.5.</li>
+            <li>Alturas: 0, 0.25, 1, 2.25; su suma es 3.5.</li>
+            <li>Área ≈ 3.5 · 0.5.</li>
+          </ol>
+          <p class="res">Resultado: 1.75</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">Con la misma función y el mismo intervalo, usa rectángulos <b>circunscritos</b>.</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = 0.5 y se usa el extremo derecho: <i>x</i> = 0.5, 1, 1.5, 2.</li>
+            <li>Alturas: 0.25, 1, 2.25, 4; su suma es 7.5.</li>
+            <li>Área ≈ 7.5 · 0.5.</li>
+          </ol>
+          <p class="res">Resultado: 3.75 (el valor exacto, 8/3 ≈ 2.67, queda entre 1.75 y 3.75)</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">Para <i>f</i>(<i>x</i>) = <i>x</i> en [0, 4] con <i>n</i> = 4, calcula el área inscrita y la circunscrita.</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = 1.</li>
+            <li>Inscritos: alturas 0, 1, 2, 3 → suma 6 → área 6 · 1 = 6.</li>
+            <li>Circunscritos: alturas 1, 2, 3, 4 → suma 10 → área 10 · 1 = 10.</li>
+          </ol>
+          <p class="res">Resultado: 6 ≤ área ≤ 10 (el área real del triángulo es 8)</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">Para <i>f</i>(<i>x</i>) = 2<i>x</i> + 1 en [1, 3] con <i>n</i> = 4, calcula ambas aproximaciones.</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = 2/4 = 0.5.</li>
+            <li>Inscritos: <i>x</i> = 1, 1.5, 2, 2.5 → alturas 3, 4, 5, 6 → 18 · 0.5 = 9.</li>
+            <li>Circunscritos: <i>x</i> = 1.5, 2, 2.5, 3 → alturas 4, 5, 6, 7 → 22 · 0.5 = 11.</li>
+          </ol>
+          <p class="res">Resultado: 9 ≤ área ≤ 11 (el área exacta es 10)</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">Para <i>f</i>(<i>x</i>) = <i>x</i>² + 1 en [0, 2] con <i>n</i> = 4, calcula el área inscrita y la circunscrita.</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = 0.5.</li>
+            <li>Inscritos: <i>x</i> = 0, 0.5, 1, 1.5 → alturas 1, 1.25, 2, 3.25 → suma 7.5 → área 3.75.</li>
+            <li>Circunscritos: <i>x</i> = 0.5, 1, 1.5, 2 → alturas 1.25, 2, 3.25, 5 → suma 11.5 → área 5.75.</li>
+          </ol>
+          <p class="res">Resultado: 3.75 ≤ área ≤ 5.75 (el área exacta es 14/3 ≈ 4.67)</p>
+        </div>
+        <h3 id="s4">Ejercicio 2.2 · Área con sumas superiores</h3>
+        <div class="formula"><small>Sumas superiores</small><i>A</i> = lím<sub><i>n</i>→∞</sub> Σ<sub><i>i</i>=1</sub><sup><i>n</i></sup> <i>f</i>(<i>a</i> + <i>i</i>Δ<i>x</i>) · (<i>b</i>−<i>a</i>)/<i>n</i>
+        </div>
+        <p>Fórmulas útiles: Σ 1 = <i>n</i>; Σ <i>i</i> = <i>n</i>(<i>n</i>+1)/2; Σ <i>i</i>² = <i>n</i>(<i>n</i>+1)(2<i>n</i>+1)/6; Σ <i>i</i>³ = <i>n</i>²(<i>n</i>+1)²/4.</p>
+        <figure>
+          <img alt="Gráfica con rectángulos superiores" src="img/fig1-4.png"/>
+          <figcaption>Figura 1.4. Rectángulos circunscritos sobre la curva.</figcaption>
+        </figure>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">Con sumas superiores, halla el área bajo <i>f</i>(<i>x</i>) = 4<i>x</i> + 5 en [2, 5].</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = (5 − 2)/<i>n</i> = 3/<i>n</i>, y <i>a</i> + <i>i</i>Δ<i>x</i> = 2 + 3<i>i</i>/<i>n</i>.</li>
+            <li><i>f</i>(<i>a</i>+<i>i</i>Δ<i>x</i>) = 4(2 + 3<i>i</i>/<i>n</i>) + 5 = 13 + 12<i>i</i>/<i>n</i>.</li>
+            <li><i>A</i> = lím<sub><i>n</i>→∞</sub> Σ (13 + 12<i>i</i>/<i>n</i>)(3/<i>n</i>) = lím<sub><i>n</i>→∞</sub> [ (39/<i>n</i>) Σ 1 + (36/<i>n</i>²) Σ <i>i</i> ].</li>
+            <li>Con Σ 1 = <i>n</i> y Σ <i>i</i> = <i>n</i>(<i>n</i>+1)/2: <i>A</i> = lím<sub><i>n</i>→∞</sub> [ 39 + 18(<i>n</i>+1)/<i>n</i> ].</li>
+            <li>Cuando <i>n</i> → ∞, (<i>n</i>+1)/<i>n</i> → 1, así que <i>A</i> = 39 + 18.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 57 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">Halla el área bajo <i>f</i>(<i>x</i>) = <i>x</i>² en [0, 3] con sumas superiores.</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = 3/<i>n</i> y <i>a</i> + <i>i</i>Δ<i>x</i> = 3<i>i</i>/<i>n</i>.</li>
+            <li><i>f</i>(3<i>i</i>/<i>n</i>) = 9<i>i</i>²/<i>n</i>².</li>
+            <li><i>A</i> = lím<sub><i>n</i>→∞</sub> Σ (9<i>i</i>²/<i>n</i>²)(3/<i>n</i>) = lím<sub><i>n</i>→∞</sub> (27/<i>n</i>³) Σ <i>i</i>².</li>
+            <li>Con Σ <i>i</i>² = <i>n</i>(<i>n</i>+1)(2<i>n</i>+1)/6: <i>A</i> = lím<sub><i>n</i>→∞</sub> 27(<i>n</i>+1)(2<i>n</i>+1)/(6<i>n</i>²).</li>
+            <li>El cociente tiende a 2/6, luego <i>A</i> = 27 · 2/6.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 9 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">Halla el área bajo <i>f</i>(<i>x</i>) = <i>x</i>² + 1 en [0, 2] con sumas superiores.</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = 2/<i>n</i> y <i>a</i> + <i>i</i>Δ<i>x</i> = 2<i>i</i>/<i>n</i>.</li>
+            <li><i>f</i>(2<i>i</i>/<i>n</i>) = 4<i>i</i>²/<i>n</i>² + 1.</li>
+            <li><i>A</i> = lím<sub><i>n</i>→∞</sub> [ (8/<i>n</i>³) Σ <i>i</i>² + (2/<i>n</i>) Σ 1 ].</li>
+            <li>Se sustituyen las fórmulas: <i>A</i> = lím<sub><i>n</i>→∞</sub> [ 8(<i>n</i>+1)(2<i>n</i>+1)/(6<i>n</i>²) + 2 ].</li>
+            <li>El primer término tiende a 16/6 = 8/3, luego <i>A</i> = 8/3 + 2.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 14/3 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">Halla el área bajo <i>f</i>(<i>x</i>) = 3<i>x</i> en [0, 2] con sumas superiores.</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = 2/<i>n</i> y <i>a</i> + <i>i</i>Δ<i>x</i> = 2<i>i</i>/<i>n</i>.</li>
+            <li><i>f</i>(2<i>i</i>/<i>n</i>) = 6<i>i</i>/<i>n</i>.</li>
+            <li><i>A</i> = lím<sub><i>n</i>→∞</sub> Σ (6<i>i</i>/<i>n</i>)(2/<i>n</i>) = lím<sub><i>n</i>→∞</sub> (12/<i>n</i>²) Σ <i>i</i>.</li>
+            <li>Con Σ <i>i</i> = <i>n</i>(<i>n</i>+1)/2: <i>A</i> = lím<sub><i>n</i>→∞</sub> 6(<i>n</i>+1)/<i>n</i>.</li>
+            <li>Cuando <i>n</i> → ∞, el cociente tiende a 1.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 6 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">Halla el área bajo <i>f</i>(<i>x</i>) = <i>x</i>³ en [0, 1] con sumas superiores.</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = 1/<i>n</i> y <i>a</i> + <i>i</i>Δ<i>x</i> = <i>i</i>/<i>n</i>.</li>
+            <li><i>f</i>(<i>i</i>/<i>n</i>) = <i>i</i>³/<i>n</i>³.</li>
+            <li><i>A</i> = lím<sub><i>n</i>→∞</sub> Σ (<i>i</i>³/<i>n</i>³)(1/<i>n</i>) = lím<sub><i>n</i>→∞</sub> (1/<i>n</i>⁴) Σ <i>i</i>³.</li>
+            <li>Con Σ <i>i</i>³ = <i>n</i>²(<i>n</i>+1)²/4: <i>A</i> = lím<sub><i>n</i>→∞</sub> (<i>n</i>+1)²/(4<i>n</i>²).</li>
+            <li>El cociente tiende a 1/4.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 1/4 u²</p>
+        </div>
+        <h3 id="s5">Ejercicio 2.3 · Área con sumas inferiores</h3>
+        <div class="formula"><small>Sumas inferiores</small><i>A</i> = lím<sub><i>n</i>→∞</sub> Σ<sub><i>i</i>=1</sub><sup><i>n</i></sup> <i>f</i>(<i>a</i> + (<i>i</i>−1)Δ<i>x</i>) · (<i>b</i>−<i>a</i>)/<i>n</i>
+        </div>
+        <p>Ahora se evalúa en el extremo izquierdo de cada subintervalo, por eso aparecen sumas de (<i>i</i>−1): Σ (<i>i</i>−1) = <i>n</i>(<i>n</i>−1)/2, Σ (<i>i</i>−1)² = (<i>n</i>−1)<i>n</i>(2<i>n</i>−1)/6, Σ (<i>i</i>−1)³ = (<i>n</i>−1)²<i>n</i>²/4.</p>
+        <figure>
+          <img alt="Gráfica con rectángulos inferiores" src="img/fig1-5.png"/>
+          <figcaption>Figura 1.5. Rectángulos inscritos bajo la curva.</figcaption>
+        </figure>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">Con sumas inferiores, halla el área bajo <i>f</i>(<i>x</i>) = <i>x</i>² en [0, 3].</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = 3/<i>n</i> y <i>a</i> + (<i>i</i>−1)Δ<i>x</i> = 3(<i>i</i>−1)/<i>n</i>.</li>
+            <li><i>f</i> = 9(<i>i</i>−1)²/<i>n</i>².</li>
+            <li><i>A</i> = lím<sub><i>n</i>→∞</sub> (27/<i>n</i>³) Σ (<i>i</i>−1)².</li>
+            <li>Con Σ (<i>i</i>−1)² = (<i>n</i>−1)<i>n</i>(2<i>n</i>−1)/6: <i>A</i> = lím<sub><i>n</i>→∞</sub> 27(<i>n</i>−1)(2<i>n</i>−1)/(6<i>n</i>²).</li>
+            <li>El cociente tiende a 2/6, luego <i>A</i> = 27 · 2/6.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 9 u² (igual que con sumas superiores)</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">Halla el área bajo <i>f</i>(<i>x</i>) = 2<i>x</i> + 1 en [0, 3] con sumas inferiores.</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = 3/<i>n</i> y <i>a</i> + (<i>i</i>−1)Δ<i>x</i> = 3(<i>i</i>−1)/<i>n</i>.</li>
+            <li><i>f</i> = 6(<i>i</i>−1)/<i>n</i> + 1.</li>
+            <li><i>A</i> = lím<sub><i>n</i>→∞</sub> [ (18/<i>n</i>²) Σ (<i>i</i>−1) + (3/<i>n</i>) Σ 1 ].</li>
+            <li>Con Σ (<i>i</i>−1) = <i>n</i>(<i>n</i>−1)/2: <i>A</i> = lím<sub><i>n</i>→∞</sub> [ 9(<i>n</i>−1)/<i>n</i> + 3 ].</li>
+            <li>Cuando <i>n</i> → ∞: <i>A</i> = 9 + 3.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 12 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">Halla el área bajo <i>f</i>(<i>x</i>) = <i>x</i>³ en [0, 2] con sumas inferiores.</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = 2/<i>n</i> y <i>a</i> + (<i>i</i>−1)Δ<i>x</i> = 2(<i>i</i>−1)/<i>n</i>.</li>
+            <li><i>f</i> = 8(<i>i</i>−1)³/<i>n</i>³.</li>
+            <li><i>A</i> = lím<sub><i>n</i>→∞</sub> (16/<i>n</i>⁴) Σ (<i>i</i>−1)³.</li>
+            <li>Con Σ (<i>i</i>−1)³ = (<i>n</i>−1)²<i>n</i>²/4: <i>A</i> = lím<sub><i>n</i>→∞</sub> 4(<i>n</i>−1)²/<i>n</i>².</li>
+            <li>El cociente tiende a 1, luego <i>A</i> = 4.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 4 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">Halla el área bajo <i>f</i>(<i>x</i>) = <i>x</i> + 3 en [1, 3] con sumas inferiores.</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = 2/<i>n</i> y <i>a</i> + (<i>i</i>−1)Δ<i>x</i> = 1 + 2(<i>i</i>−1)/<i>n</i>.</li>
+            <li><i>f</i> = 4 + 2(<i>i</i>−1)/<i>n</i>.</li>
+            <li><i>A</i> = lím<sub><i>n</i>→∞</sub> [ (8/<i>n</i>) Σ 1 + (4/<i>n</i>²) Σ (<i>i</i>−1) ].</li>
+            <li>Se sustituye: <i>A</i> = lím<sub><i>n</i>→∞</sub> [ 8 + 2(<i>n</i>−1)/<i>n</i> ].</li>
+            <li>Cuando <i>n</i> → ∞: <i>A</i> = 8 + 2.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 10 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">Halla el área bajo <i>f</i>(<i>x</i>) = <i>x</i>² + 1 en [0, 3] con sumas inferiores.</p>
+          <ol class="pasos">
+            <li>Δ<i>x</i> = 3/<i>n</i> y <i>a</i> + (<i>i</i>−1)Δ<i>x</i> = 3(<i>i</i>−1)/<i>n</i>.</li>
+            <li><i>f</i> = 9(<i>i</i>−1)²/<i>n</i>² + 1.</li>
+            <li><i>A</i> = lím<sub><i>n</i>→∞</sub> [ (27/<i>n</i>³) Σ (<i>i</i>−1)² + (3/<i>n</i>) Σ 1 ].</li>
+            <li>Se sustituye: <i>A</i> = lím<sub><i>n</i>→∞</sub> [ 27(<i>n</i>−1)(2<i>n</i>−1)/(6<i>n</i>²) + 3 ].</li>
+            <li>El primer término tiende a 9: <i>A</i> = 9 + 3.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 12 u²</p>
+        </div>
+      </section>
+      <section>
+        <h2>Integrales inmediatas por fórmula directa</h2>
+        <p>Una integral es inmediata cuando coincide —o se hace coincidir mediante un cambio de variable— con alguna de las fórmulas básicas de integración. Nunca debe omitirse la constante de integración <i>C</i>.</p>
+        <div class="formula"><small>Potencia (n ≠ −1)</small>∫ v<sup>n</sup> dv = v<sup>n+1</sup>/(n+1) + C
+        </div>
+        <div class="formula"><small>Exponencial base e</small>∫ e<sup>v</sup> dv = e<sup>v</sup> + C
+        </div>
+        <div class="formula"><small>Exponencial base a</small>∫ a<sup>v</sup> dv = a<sup>v</sup>/ln a + C
+        </div>
+        <figure>
+          <img alt="Tabla de fórmulas inmediatas de integración" src="img/fig2-1.png"/>
+          <figcaption>Figura 1.6. Fórmulas básicas de integración.</figcaption>
+        </figure>
+        <h3 id="s6">Ejercicio 3 · Integrales con la fórmula de potencias</h3>
+        <p>Resuelve las siguientes integrales de polinomios y potencias.</p>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ x⁵ dx</p>
+          <ol class="pasos">
+            <li>Se aplica la fórmula de potencias: ∫ v<sup>n</sup> dv = v<sup>n+1</sup>/(n+1) + C, con n = 5.</li>
+            <li>Se suma 1 al exponente y se divide entre el nuevo exponente.</li>
+          </ol>
+          <p class="res">Resultado: x⁶/6 + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ (4x³ − 3x² + 2) dx</p>
+          <ol class="pasos">
+            <li>Se integra cada término por separado (la integral de una suma es la suma de las integrales).</li>
+            <li>∫4x³dx = x⁴; ∫3x²dx = x³; ∫2 dx = 2x.</li>
+            <li>Se combinan los resultados y se agrega la constante.</li>
+          </ol>
+          <p class="res">Resultado: x⁴ − x³ + 2x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ √x dx</p>
+          <ol class="pasos">
+            <li>Se escribe la raíz como potencia fraccionaria: √x = x<sup>1/2</sup>.</li>
+            <li>Se aplica la fórmula de potencias con n = 1/2, por lo que n+1 = 3/2.</li>
+            <li>Dividir entre 3/2 equivale a multiplicar por 2/3.</li>
+          </ol>
+          <p class="res">Resultado: (2/3) x<sup>3/2</sup> + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ dx/x³</p>
+          <ol class="pasos">
+            <li>Se escribe 1/x³ como x<sup>−3</sup>.</li>
+            <li>Se aplica la fórmula de potencias con n = −3, por lo que n+1 = −2.</li>
+            <li>Se divide entre −2.</li>
+          </ol>
+          <p class="res">Resultado: −1/(2x²) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ (2x + 5)⁴ dx</p>
+          <ol class="pasos">
+            <li>El integrando no es exactamente v⁴ dv, así que se propone <i>v</i> = 2x + 5.</li>
+            <li>Entonces d<i>v</i> = 2 dx, de donde dx = d<i>v</i>/2.</li>
+            <li>Se sustituye: ∫ v⁴ (dv/2) = (1/2) ∫ v⁴ dv = v⁵/10.</li>
+            <li>Se regresa a la variable original.</li>
+          </ol>
+          <p class="res">Resultado: (2x + 5)⁵/10 + C</p>
+        </div>
+        <h3 id="s7">Ejercicio 4 · Integrales exponenciales</h3>
+        <p>Se usan las fórmulas de exponencial, con cambio de variable cuando el exponente no es simplemente x.</p>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ e⁵ˣ dx</p>
+          <ol class="pasos">
+            <li>Se propone <i>v</i> = 5x, por lo que d<i>v</i> = 5 dx.</li>
+            <li>Se sustituye: (1/5) ∫ e<sup>v</sup> dv = (1/5) e<sup>v</sup>.</li>
+            <li>Se regresa a la variable original.</li>
+          </ol>
+          <p class="res">Resultado: e⁵ˣ/5 + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ 3e⁻²ˣ dx</p>
+          <ol class="pasos">
+            <li>La constante 3 sale de la integral.</li>
+            <li>Con <i>v</i> = −2x, d<i>v</i> = −2 dx, entonces dx = −d<i>v</i>/2.</li>
+            <li>3 ∫ e<sup>v</sup> (−dv/2) = −(3/2) e<sup>v</sup>.</li>
+          </ol>
+          <p class="res">Resultado: −(3/2) e⁻²ˣ + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ e<sup>ax+b</sup> dx (a, b constantes)</p>
+          <ol class="pasos">
+            <li>Se propone <i>v</i> = ax + b, por lo que d<i>v</i> = a dx.</li>
+            <li>Se sustituye: (1/a) ∫ e<sup>v</sup> dv = (1/a) e<sup>v</sup>.</li>
+          </ol>
+          <p class="res">Resultado: e<sup>ax+b</sup>/a + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ x e<sup>x²</sup> dx</p>
+          <ol class="pasos">
+            <li>Se propone <i>v</i> = x², por lo que d<i>v</i> = 2x dx, es decir, x dx = dv/2.</li>
+            <li>Se sustituye: (1/2) ∫ e<sup>v</sup> dv = (1/2) e<sup>v</sup>.</li>
+          </ol>
+          <p class="res">Resultado: e<sup>x²</sup>/2 + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ 2³ˣ dx</p>
+          <ol class="pasos">
+            <li>Se usa la fórmula ∫ a<sup>v</sup> dv = a<sup>v</sup>/ln a + C, con base a = 2.</li>
+            <li>Con <i>v</i> = 3x, d<i>v</i> = 3 dx, entonces (1/3) ∫ 2<sup>v</sup> dv = (1/3) · 2<sup>v</sup>/ln 2.</li>
+          </ol>
+          <p class="res">Resultado: 2³ˣ / (3 ln 2) + C</p>
+        </div>
+        <h3 id="s8">Ejercicio 5 · Integrales trigonométricas directas</h3>
+        <p>Son las que corresponden a las derivadas de las funciones trigonométricas básicas.</p>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ sen 5x dx</p>
+          <ol class="pasos">
+            <li>Se propone <i>v</i> = 5x, d<i>v</i> = 5 dx.</li>
+            <li>(1/5) ∫ sen v dv = (1/5)(−cos v).</li>
+          </ol>
+          <p class="res">Resultado: −(1/5) cos 5x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ cos 4x dx</p>
+          <ol class="pasos">
+            <li>Se propone <i>v</i> = 4x, d<i>v</i> = 4 dx.</li>
+            <li>(1/4) ∫ cos v dv = (1/4) sen v.</li>
+          </ol>
+          <p class="res">Resultado: (1/4) sen 4x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ x sen(x²) dx</p>
+          <ol class="pasos">
+            <li>Se propone <i>v</i> = x², d<i>v</i> = 2x dx, por lo que x dx = dv/2.</li>
+            <li>(1/2) ∫ sen v dv = (1/2)(−cos v).</li>
+          </ol>
+          <p class="res">Resultado: −(1/2) cos(x²) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ sec² 3x dx</p>
+          <ol class="pasos">
+            <li>Se usa la fórmula inmediata ∫ sec² v dv = tan v + C.</li>
+            <li>Con <i>v</i> = 3x, d<i>v</i> = 3 dx: (1/3) ∫ sec² v dv = (1/3) tan v.</li>
+          </ol>
+          <p class="res">Resultado: (1/3) tan 3x + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ csc² 2x dx</p>
+          <ol class="pasos">
+            <li>Se usa ∫ csc² v dv = −cot v + C.</li>
+            <li>Con <i>v</i> = 2x, d<i>v</i> = 2 dx: (1/2) ∫ csc² v dv = (1/2)(−cot v).</li>
+          </ol>
+          <p class="res">Resultado: −(1/2) cot 2x + C</p>
+        </div>
+      </section>
+      <section>
+        <h2>Integrales que producen arco tangente, arco seno o logaritmo</h2>
+        <p>Cuando el denominador tiene la forma a²±v² (o su raíz), la integral no se resuelve por potencias sino con una de estas tres fórmulas.</p>
+        <div class="formula"><small>Arco tangente</small>∫ dv / (a² + v²) = (1/a) arctan(v/a) + C
+        </div>
+        <div class="formula"><small>Arco seno</small>∫ dv / √(a² − v²) = arcsen(v/a) + C
+        </div>
+        <div class="formula"><small>Logaritmo (v² − a², sin raíz)</small>∫ dv / (v² − a²) = (1/2a) ln |(v−a)/(v+a)| + C
+        </div>
+        <figure>
+          <img alt="Triángulo o esquema de las tres formas a²+v², a²−v², v²−a²" src="img/fig2-2.png"/>
+          <figcaption>Figura 1.7. Identificación de la forma del denominador.</figcaption>
+        </figure>
+        <h3 id="s9">Ejercicio 6 · Identificación directa de a y v</h3>
+        <p>En estos casos a y v se identifican de inmediato, sin manipular el denominador.</p>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ dx / (x² + 16)</p>
+          <ol class="pasos">
+            <li>Es la forma ∫ dv/(a²+v²) = (1/a) arctan(v/a) + C, con a = 4, v = x.</li>
+          </ol>
+          <p class="res">Resultado: (1/4) arctan(x/4) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ dx / (25 − x²)</p>
+          <ol class="pasos">
+            <li>Es la forma ∫ dv/(a²−v²) = (1/2a) ln|(a+v)/(a−v)| + C, con a = 5, v = x (nótese: sin raíz).</li>
+          </ol>
+          <p class="res">Resultado: (1/10) ln |(5+x)/(5−x)| + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ dx / (x² − 9)</p>
+          <ol class="pasos">
+            <li>Es la forma ∫ dv/(v²−a²) = (1/2a) ln|(v−a)/(v+a)| + C, con a = 3, v = x.</li>
+          </ol>
+          <p class="res">Resultado: (1/6) ln |(x−3)/(x+3)| + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ dx / (4x² + 9)</p>
+          <ol class="pasos">
+            <li>Se identifica a² = 9 (a = 3) y v² = 4x² (v = 2x), con dv = 2 dx.</li>
+            <li>(1/2) ∫ dv/(a²+v²) = (1/2)(1/3) arctan(v/3).</li>
+          </ol>
+          <p class="res">Resultado: (1/6) arctan(2x/3) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ dx / √(16 − x²)</p>
+          <ol class="pasos">
+            <li>Es la forma ∫ dv/√(a²−v²) = arcsen(v/a) + C, con a = 4, v = x.</li>
+          </ol>
+          <p class="res">Resultado: arcsen(x/4) + C</p>
+        </div>
+        <h3 id="s10">Ejercicio 7 · Con cambio de variable o trinomio cuadrado</h3>
+        <p>Cuando el denominador es un trinomio x²+bx+c, primero se completa el cuadrado para dejarlo como (x+h)² ± k² y así reconocer la fórmula.</p>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">∫ dx / (x² + 6x + 13)</p>
+          <ol class="pasos">
+            <li>El denominador no es un binomio al cuadrado; se completa el trinomio cuadrado perfecto: x²+6x+13 = (x+3)²+4.</li>
+            <li>Con v = x+3, a = 2, queda la forma ∫ dv/(a²+v²).</li>
+            <li>Se aplica la fórmula del arcotangente.</li>
+          </ol>
+          <p class="res">Resultado: (1/2) arctan[(x+3)/2] + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">∫ dx / (x² − 4x − 5)</p>
+          <ol class="pasos">
+            <li>Se completa el cuadrado: x²−4x−5 = (x−2)²−9.</li>
+            <li>Con v = x−2, a = 3, queda la forma ∫ dv/(v²−a²).</li>
+          </ol>
+          <p class="res">Resultado: (1/6) ln |(x−5)/(x+1)| + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">∫ dx / √(8x − x²)</p>
+          <ol class="pasos">
+            <li>Se completa el cuadrado dentro de la raíz: 8x−x² = 16−(x−4)².</li>
+            <li>Con v = x−4, a = 4, queda la forma ∫ dv/√(a²−v²).</li>
+          </ol>
+          <p class="res">Resultado: arcsen[(x−4)/4] + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">∫ dx / (9x² + 6x + 2)</p>
+          <ol class="pasos">
+            <li>Se factoriza 9 y se completa el cuadrado: 9x²+6x+2 = 9(x+1/3)²+1.</li>
+            <li>Equivalente a (3x+1)²+1, con v = 3x+1, a = 1, dv = 3 dx.</li>
+          </ol>
+          <p class="res">Resultado: (1/3) arctan(3x+1) + C</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">∫ (2x + 3) / (x² + 3x + 5) dx</p>
+          <ol class="pasos">
+            <li>El numerador es exactamente la derivada del denominador: d/dx(x²+3x+5) = 2x+3.</li>
+            <li>Es la forma inmediata ∫ du/u = ln|u| + C, con u = x²+3x+5.</li>
+          </ol>
+          <p class="res">Resultado: ln (x² + 3x + 5) + C</p>
+        </div>
+        <figure>
+          <img alt="Proceso de completar el trinomio cuadrado perfecto" src="img/fig2-3.png"/>
+          <figcaption>Figura 1.8. Ejemplo de completar el cuadrado.</figcaption>
+        </figure>
+      </section>
+      <div class="pie-nav"><a href="index.html">← Inicio</a><a href="unidad2.html">Unidad 2 →</a>
+      </div>
+    </main>
+  </div>
+  <footer>Cálculo Integral · CONAMAT, Pearson (2010)
+</footer></body></html>

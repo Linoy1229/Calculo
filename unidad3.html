@@ -1,0 +1,638 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Unidad 3 · Aplicaciones de la integral</title><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
+  <header class="barra">
+    <div>
+      <div class="marca">
+        <div class="logos">
+          <img alt="Universidad Autónoma de Tamaulipas" src="img/logo-uat.png" style="height:40px"/>
+          <img alt="Facultad de Ingeniería y Ciencias" src="img/logo-fic.png" style="height:34px"/>
+        </div>
+        <strong><a href="index.html" style="color:inherit;text-decoration:none">Cálculo Integral</a></strong>
+      </div><span><a href="index.html" style="color:inherit">← Inicio</a></span>
+    </div>
+  </header>
+  <div class="cuerpo">
+    <nav class="indice">
+      <h2>Unidades</h2>
+      <ol>
+        <li><a href="unidad1.html">Unidad 1. Sumas e integrales inmediatas</a></li>
+        <li><a href="unidad2.html">Unidad 2. Integrales trigonométricas y métodos de integración</a></li>
+        <li><a class="act" href="unidad3.html">Unidad 3. Aplicaciones de la integral</a></li>
+      </ol>
+      <h2 class="sep">En esta página</h2>
+      <ol>
+        <li><a href="#s1">Ejercicio 20 · Curva a partir de su pendiente</a></li>
+        <li><a href="#s2">Ejercicio 21 · Valor de la integral definida</a></li>
+        <li><a href="#s3">Ejercicio 22 · Áreas bajo la curva</a></li>
+        <li><a href="#s4">Ejercicio 23 · Fórmula de trapecios</a></li>
+        <li><a href="#s5">Ejercicio 24 · Método de Simpson 1/3</a></li>
+        <li><a href="#s6">Ejercicio 25 · Área entre curvas</a></li>
+      </ol>
+    </nav>
+    <main>
+      <p class="cap">Unidad 3 · Ejercicios 20 al 25</p>
+      <h1 style="margin-top:0">Aplicaciones de la integral</h1>
+      <p>Constante de integración, integral definida, áreas, fórmula de trapecios, método de Simpson y áreas entre curvas, cada ejemplo con su gráfica.</p>
+      <section>
+        <h2>Constante de integración</h2>
+        <p>Una integral indefinida no representa una sola función sino toda una familia de curvas que difieren en una constante <i>C</i>. Si se conoce un punto por el que pasa la curva (condición inicial), la constante queda determinada y se obtiene la curva particular.</p>
+        <div class="formula"><small>Familia de primitivas</small>Si <i>F</i> ′(<i>x</i>) = <i>f</i>(<i>x</i>), entonces ∫ <i>f</i>(<i>x</i>) d<i>x</i> = <i>F</i>(<i>x</i>) + <i>C</i>
+        </div>
+        <figure>
+          <!-- IMAGEN: reemplaza el div por <img src="img/archivo.png" alt="..."> -->
+          <div class="espacio">Espacio para imagen<br/>Familia de curvas con distintos valores de C
+          </div>
+          <figcaption>Figura 3.1. Curvas que solo difieren en la constante de integración.</figcaption>
+        </figure>
+        <h3 id="s1">Ejercicio 20 · Curva a partir de su pendiente</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">La pendiente de la recta tangente a una curva es <i>x</i> + 3. Obtén la ecuación de la curva si pasa por el punto (2, 4).</p>
+          <figure class="grafica"><img alt="Curva y = x²/2 + 3x − 4 y otras curvas de la familia" src="img/u3/e20_1.svg"/>
+            <figcaption>Figura 3.2. Curva y = x²/2 + 3x − 4 y otras curvas de la familia</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>La pendiente de la recta tangente es la derivada, así que d<i>y</i>/d<i>x</i> = <i>x</i> + 3.</li>
+            <li>Se integra para obtener la familia de curvas: <i>y</i> = ∫(<i>x</i> + 3) d<i>x</i> = <i>x</i>²/2 + 3<i>x</i> + <i>C</i>.</li>
+            <li>Como la curva pasa por (2, 4), se sustituye <i>x</i> = 2, <i>y</i> = 4: 4 = 2²/2 + 3(2) + <i>C</i> = 8 + <i>C</i>, de donde <i>C</i> = −4.</li>
+            <li>Se sustituye el valor de <i>C</i> en la ecuación general.</li>
+          </ol>
+          <p class="res">Resultado: <i>y</i> = <i>x</i>²/2 + 3<i>x</i> − 4</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">La derivada de una función es <i>f</i> ′(<i>x</i>) = cos <i>x</i>. Encuentra <i>f</i>(<i>x</i>) si su gráfica contiene el punto (π/2, 3).</p>
+          <figure class="grafica"><img alt="Curva f(x) = sen x + 2 que pasa por (π/2, 3)" src="img/u3/e20_2.svg"/>
+            <figcaption>Figura 3.3. Curva f(x) = sen x + 2 que pasa por (π/2, 3)</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se integra la derivada: <i>f</i>(<i>x</i>) = ∫cos <i>x</i> d<i>x</i> = sen <i>x</i> + <i>C</i>.</li>
+            <li>Se sustituye el punto: 3 = sen(π/2) + <i>C</i> = 1 + <i>C</i>.</li>
+            <li>Se despeja la constante: <i>C</i> = 2.</li>
+          </ol>
+          <p class="res">Resultado: <i>f</i>(<i>x</i>) = sen <i>x</i> + 2</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">La pendiente de una curva en cada punto es 3<i>x</i>² − 2<i>x</i>. Obtén su ecuación si pasa por el punto (1, 5).</p>
+          <figure class="grafica"><img alt="Curva y = x³ − x² + 5 que pasa por (1, 5)" src="img/u3/e20_3.svg"/>
+            <figcaption>Figura 3.4. Curva y = x³ − x² + 5 que pasa por (1, 5)</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se plantea d<i>y</i>/d<i>x</i> = 3<i>x</i>² − 2<i>x</i> y se integra: <i>y</i> = <i>x</i>³ − <i>x</i>² + <i>C</i>.</li>
+            <li>Se sustituye (1, 5): 5 = 1³ − 1² + <i>C</i> = 0 + <i>C</i>.</li>
+            <li>Por tanto <i>C</i> = 5.</li>
+          </ol>
+          <p class="res">Resultado: <i>y</i> = <i>x</i>³ − <i>x</i>² + 5</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">Si d<i>y</i>/d<i>x</i> = <i>e<sup>x</sup></i> y la curva pasa por (0, 3), encuentra la ecuación de la curva.</p>
+          <figure class="grafica"><img alt="Curva y = eˣ + 2 que pasa por (0, 3)" src="img/u3/e20_4.svg"/>
+            <figcaption>Figura 3.5. Curva y = eˣ + 2 que pasa por (0, 3)</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se integra: <i>y</i> = ∫<i>e<sup>x</sup></i> d<i>x</i> = <i>e<sup>x</sup></i> + <i>C</i>.</li>
+            <li>Se sustituye (0, 3): 3 = <i>e</i>⁰ + <i>C</i> = 1 + <i>C</i>.</li>
+            <li>Se despeja: <i>C</i> = 2.</li>
+          </ol>
+          <p class="res">Resultado: <i>y</i> = <i>e<sup>x</sup></i> + 2</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">Una curva cumple <i>y</i>″ = 6<i>x</i>, su pendiente en <i>x</i> = 0 es −3 y pasa por el punto (0, 1). Encuentra su ecuación.</p>
+          <figure class="grafica"><img alt="Curva y = x³ − 3x + 1 que pasa por (0, 1) con pendiente −3 en ese punto" src="img/u3/e20_5.svg"/>
+            <figcaption>Figura 3.6. Curva y = x³ − 3x + 1 que pasa por (0, 1) con pendiente −3 en ese punto</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se integra una vez para obtener la pendiente: <i>y</i> ′ = ∫6<i>x</i> d<i>x</i> = 3<i>x</i>² + <i>C</i><sub>1</sub>.</li>
+            <li>Con <i>y</i> ′(0) = −3: −3 = 0 + <i>C</i><sub>1</sub>, así que <i>C</i><sub>1</sub> = −3 y <i>y</i> ′ = 3<i>x</i>² − 3.</li>
+            <li>Se integra de nuevo: <i>y</i> = ∫(3<i>x</i>² − 3) d<i>x</i> = <i>x</i>³ − 3<i>x</i> + <i>C</i><sub>2</sub>.</li>
+            <li>Con el punto (0, 1): 1 = 0 − 0 + <i>C</i><sub>2</sub>, por lo que <i>C</i><sub>2</sub> = 1.</li>
+          </ol>
+          <p class="res">Resultado: <i>y</i> = <i>x</i>³ − 3<i>x</i> + 1</p>
+        </div>
+      </section>
+      <section>
+        <h2>Integral definida</h2>
+        <p>La integral definida entre <i>a</i> y <i>b</i> es un número. Se calcula con el teorema fundamental del cálculo: se halla una antiderivada <i>F</i> y se evalúa en los límites. Si la región queda debajo del eje X, la integral resulta negativa.</p>
+        <div class="formula"><small>Teorema fundamental del cálculo</small>∫<sub><i>a</i></sub><sup><i>b</i></sup> <i>f</i>(<i>x</i>) d<i>x</i> = <i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>)
+        </div>
+        <h3 id="s2">Ejercicio 21 · Valor de la integral definida</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">Evalúa ∫<sub>0</sub><sup>3</sup> (<i>x</i>² + 1) d<i>x</i>.</p>
+          <figure class="grafica"><img alt="Región bajo y = x² + 1 entre x = 0 y x = 3" src="img/u3/e21_1.svg"/>
+            <figcaption>Figura 3.7. Región bajo y = x² + 1 entre x = 0 y x = 3</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se busca una antiderivada del integrando: <i>F</i>(<i>x</i>) = <i>x</i>³/3 + <i>x</i> (no se escribe la constante en la integral definida).</li>
+            <li>Se aplica el teorema fundamental del cálculo: ∫<sub><i>a</i></sub><sup><i>b</i></sup> <i>f</i>(<i>x</i>) d<i>x</i> = <i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>).</li>
+            <li><i>F</i>(3) = 27/3 + 3 = 12 y <i>F</i>(0) = 0.</li>
+            <li>Se restan: 12 − 0.</li>
+          </ol>
+          <p class="res">Resultado: 12</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">Evalúa ∫<sub>1</sub><sup>4</sup> √<i>x</i> d<i>x</i>.</p>
+          <figure class="grafica"><img alt="Región bajo y = √x entre x = 1 y x = 4" src="img/u3/e21_2.svg"/>
+            <figcaption>Figura 3.8. Región bajo y = √x entre x = 1 y x = 4</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se escribe la raíz como potencia: √<i>x</i> = <i>x</i><sup>1/2</sup>.</li>
+            <li>Una antiderivada es <i>F</i>(<i>x</i>) = (2/3) <i>x</i><sup>3/2</sup>.</li>
+            <li><i>F</i>(4) = (2/3)(8) = 16/3 y <i>F</i>(1) = 2/3.</li>
+            <li>Se restan: 16/3 − 2/3 = 14/3.</li>
+          </ol>
+          <p class="res">Resultado: 14/3</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">Evalúa ∫<sub>0</sub><sup>π</sup> sen <i>x</i> d<i>x</i>.</p>
+          <figure class="grafica"><img alt="Región bajo y = sen x entre x = 0 y x = π" src="img/u3/e21_3.svg"/>
+            <figcaption>Figura 3.9. Región bajo y = sen x entre x = 0 y x = π</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Una antiderivada de sen <i>x</i> es <i>F</i>(<i>x</i>) = −cos <i>x</i>.</li>
+            <li><i>F</i>(π) = −cos π = −(−1) = 1.</li>
+            <li><i>F</i>(0) = −cos 0 = −1.</li>
+            <li>Se restan: 1 − (−1) = 2.</li>
+          </ol>
+          <p class="res">Resultado: 2</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">Evalúa ∫<sub>0</sub><sup>1</sup> <i>e</i><sup>2<i>x</i></sup> d<i>x</i>.</p>
+          <figure class="grafica"><img alt="Región bajo y = e^(2x) entre x = 0 y x = 1" src="img/u3/e21_4.svg"/>
+            <figcaption>Figura 3.10. Región bajo y = e^(2x) entre x = 0 y x = 1</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se hace el cambio de variable <i>v</i> = 2<i>x</i>, d<i>v</i> = 2 d<i>x</i>, y se obtiene la antiderivada <i>F</i>(<i>x</i>) = <i>e</i><sup>2<i>x</i></sup>/2.</li>
+            <li><i>F</i>(1) = <i>e</i>²/2 y <i>F</i>(0) = <i>e</i>⁰/2 = 1/2.</li>
+            <li>Se restan: <i>e</i>²/2 − 1/2 = (<i>e</i>² − 1)/2.</li>
+            <li>Numéricamente, (7.3891 − 1)/2 ≈ 3.1945.</li>
+          </ol>
+          <p class="res">Resultado: (<i>e</i>² − 1)/2 ≈ 3.1945</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">Evalúa ∫<sub>0</sub><sup>2</sup> (<i>x</i>² − 2<i>x</i>) d<i>x</i> e interpreta el signo del resultado.</p>
+          <figure class="grafica"><img alt="Región entre y = x² − 2x y el eje X, de x = 0 a x = 2 (bajo el eje)" src="img/u3/e21_5.svg"/>
+            <figcaption>Figura 3.11. Región entre y = x² − 2x y el eje X, de x = 0 a x = 2 (bajo el eje)</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Una antiderivada es <i>F</i>(<i>x</i>) = <i>x</i>³/3 − <i>x</i>².</li>
+            <li><i>F</i>(2) = 8/3 − 4 = −4/3 y <i>F</i>(0) = 0.</li>
+            <li>Se restan: −4/3 − 0 = −4/3.</li>
+            <li>El resultado es negativo porque en [0, 2] la curva está por debajo del eje X: la integral mide un área con signo. El área geométrica de la región es 4/3 u².</li>
+          </ol>
+          <p class="res">Resultado: −4/3</p>
+        </div>
+      </section>
+      <section>
+        <h2>Área bajo la curva</h2>
+        <p>Cuando <i>f</i>(<i>x</i>) ≥ 0 en [<i>a</i>, <i>b</i>], el área comprendida entre la curva, el eje X y las rectas <i>x</i> = <i>a</i>, <i>x</i> = <i>b</i> es la integral definida. Si la curva cruza el eje X, el área se calcula por tramos, tomando cada tramo en valor positivo. Cuando la curva está dada como <i>x</i> = <i>g</i>(<i>y</i>), se integra respecto a <i>y</i>.</p>
+        <div class="formula"><small>Área respecto a x</small><i>A</i> = ∫<sub><i>a</i></sub><sup><i>b</i></sup> <i>f</i>(<i>x</i>) d<i>x</i>   (<i>f</i> ≥ 0)
+        </div>
+        <div class="formula"><small>Área respecto a y</small><i>A</i> = ∫<sub><i>c</i></sub><sup><i>d</i></sup> <i>g</i>(<i>y</i>) d<i>y</i>
+        </div>
+        <h3 id="s3">Ejercicio 22 · Áreas bajo la curva</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">Determina el área limitada por <i>f</i>(<i>x</i>) = 2<i>x</i> + 1, las rectas <i>x</i> = 1, <i>x</i> = 4 y el eje X.</p>
+          <figure class="grafica"><img alt="Área bajo f(x) = 2x + 1 entre x = 1 y x = 4" src="img/u3/e22_1.svg"/>
+            <figcaption>Figura 3.12. Área bajo f(x) = 2x + 1 entre x = 1 y x = 4</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>En [1, 4] la función es positiva, así que el área es <i>A</i> = ∫<sub>1</sub><sup>4</sup> (2<i>x</i> + 1) d<i>x</i>.</li>
+            <li>Una antiderivada es <i>F</i>(<i>x</i>) = <i>x</i>² + <i>x</i>.</li>
+            <li><i>F</i>(4) = 16 + 4 = 20 y <i>F</i>(1) = 1 + 1 = 2.</li>
+            <li><i>A</i> = 20 − 2 = 18.</li>
+            <li>Verificación geométrica: la región es un trapecio de bases 3 y 9 y altura 3, cuya área es (3 + 9)/2 · 3 = 18.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 18 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">Determina el área limitada por <i>y</i> = 9 − <i>x</i>² y el eje X.</p>
+          <figure class="grafica"><img alt="Área entre y = 9 − x² y el eje X" src="img/u3/e22_2.svg"/>
+            <figcaption>Figura 3.13. Área entre y = 9 − x² y el eje X</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Los límites de integración son los puntos donde la curva corta al eje X: 9 − <i>x</i>² = 0 ⇒ <i>x</i> = −3 y <i>x</i> = 3.</li>
+            <li>Entre esos puntos la curva está sobre el eje X, así que <i>A</i> = ∫<sub>−3</sub><sup>3</sup> (9 − <i>x</i>²) d<i>x</i>.</li>
+            <li>Una antiderivada es <i>F</i>(<i>x</i>) = 9<i>x</i> − <i>x</i>³/3, con <i>F</i>(3) = 27 − 9 = 18 y <i>F</i>(−3) = −27 + 9 = −18.</li>
+            <li><i>A</i> = 18 − (−18) = 36.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 36 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">Determina el área limitada por <i>f</i>(<i>x</i>) = <i>x</i>³, las rectas <i>x</i> = 1, <i>x</i> = 3 y el eje X.</p>
+          <figure class="grafica"><img alt="Área bajo f(x) = x³ entre x = 1 y x = 3" src="img/u3/e22_3.svg"/>
+            <figcaption>Figura 3.14. Área bajo f(x) = x³ entre x = 1 y x = 3</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>En [1, 3] la función es positiva: <i>A</i> = ∫<sub>1</sub><sup>3</sup> <i>x</i>³ d<i>x</i>.</li>
+            <li>Una antiderivada es <i>F</i>(<i>x</i>) = <i>x</i>⁴/4.</li>
+            <li><i>F</i>(3) = 81/4 y <i>F</i>(1) = 1/4.</li>
+            <li><i>A</i> = 81/4 − 1/4 = 80/4 = 20.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 20 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">Determina el área limitada por la curva <i>x</i> = <i>y</i>² + 1, las rectas <i>y</i> = 1, <i>y</i> = 3 y el eje Y.</p>
+          <figure class="grafica"><img alt="Área entre x = y² + 1 y el eje Y, de y = 1 a y = 3" src="img/u3/e22_4.svg"/>
+            <figcaption>Figura 3.15. Área entre x = y² + 1 y el eje Y, de y = 1 a y = 3</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>La curva está dada como <i>x</i> en función de <i>y</i>, por lo que las franjas son horizontales y se integra respecto a <i>y</i>: <i>A</i> = ∫<sub>1</sub><sup>3</sup> (<i>y</i>² + 1) d<i>y</i>.</li>
+            <li>Una antiderivada es <i>F</i>(<i>y</i>) = <i>y</i>³/3 + <i>y</i>.</li>
+            <li><i>F</i>(3) = 9 + 3 = 12 y <i>F</i>(1) = 1/3 + 1 = 4/3.</li>
+            <li><i>A</i> = 12 − 4/3 = 32/3 ≈ 10.67.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 32/3 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">Determina el área limitada por <i>y</i> = <i>x</i>² − 4, las rectas <i>x</i> = 0, <i>x</i> = 3 y el eje X.</p>
+          <figure class="grafica"><img alt="Áreas de y = x² − 4 bajo el eje (x de 0 a 2) y sobre el eje (x de 2 a 3)" src="img/u3/e22_5.svg"/>
+            <figcaption>Figura 3.16. Áreas de y = x² − 4 bajo el eje (x de 0 a 2) y sobre el eje (x de 2 a 3)</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>La curva corta al eje X en <i>x</i> = 2 (<i>x</i>² − 4 = 0). En [0, 2] queda debajo del eje y en [2, 3] queda arriba, así que el área se divide en dos tramos.</li>
+            <li>Tramo bajo el eje (se cambia el signo para obtener un área positiva): <i>A</i><sub>1</sub> = ∫<sub>0</sub><sup>2</sup> (4 − <i>x</i>²) d<i>x</i> = [4<i>x</i> − <i>x</i>³/3]<sub>0</sub><sup>2</sup> = 8 − 8/3 = 16/3.</li>
+            <li>Tramo sobre el eje: <i>A</i><sub>2</sub> = ∫<sub>2</sub><sup>3</sup> (<i>x</i>² − 4) d<i>x</i> = [<i>x</i>³/3 − 4<i>x</i>]<sub>2</sub><sup>3</sup> = (9 − 12) − (8/3 − 8) = 7/3.</li>
+            <li>Se suman las dos áreas: <i>A</i> = 16/3 + 7/3 = 23/3 ≈ 7.67.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 23/3 u²</p>
+        </div>
+      </section>
+      <section>
+        <h2>Fórmula de trapecios</h2>
+        <p>Cuando no es posible (o no conviene) integrar de forma exacta, el área se aproxima dividiendo [<i>a</i>, <i>b</i>] en <i>n</i> subintervalos iguales y sustituyendo cada franja por un trapecio.</p>
+        <div class="formula"><small>Fórmula de trapecios</small><i>A</i> ≈ (Δ<i>x</i>/2) [<i>y</i><sub>0</sub> + 2(<i>y</i><sub>1</sub> + <i>y</i><sub>2</sub> + … + <i>y</i><sub><i>n</i>−1</sub>) + <i>y<sub>n</sub></i>], con Δ<i>x</i> = (<i>b</i> − <i>a</i>)/<i>n</i>
+        </div>
+        <h3 id="s4">Ejercicio 23 · Fórmula de trapecios</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">Utiliza la fórmula de trapecios para aproximar ∫<sub>0</sub><sup>2</sup> <i>x</i>² d<i>x</i> con <i>n</i> = 4.</p>
+          <figure class="grafica"><img alt="Trapecios para y = x² con n = 4" src="img/u3/e23_1.svg"/>
+            <figcaption>Figura 3.17. Trapecios para y = x² con n = 4</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se calcula el ancho de cada subintervalo: Δ<i>x</i> = (<i>b</i> − <i>a</i>)/<i>n</i> = (2 − 0)/4 = 0.5.</li>
+            <li>Se obtienen los nodos <i>x<sub>i</sub></i> = <i>a</i> + <i>i</i>Δ<i>x</i> y se evalúa la función en cada uno:
+            <div style="overflow-x:auto">
+              <table>
+                <tr><th><i>i</i></th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+                </tr>
+                <tr><th><i>x<sub>i</sub></i></th><td>0</td><td>0.5</td><td>1</td><td>1.5</td><td>2</td>
+                </tr>
+                <tr><th><i>f</i>(<i>x<sub>i</sub></i>)</th><td>0.00000</td><td>0.25000</td><td>1.00000</td><td>2.25000</td><td>4.00000</td>
+                </tr>
+              </table>
+            </div></li>
+            <li>Se aplica la fórmula de trapecios: <i>A</i> ≈ (Δ<i>x</i>/2)[<i>y</i><sub>0</sub> + 2(<i>y</i><sub>1</sub> + … + <i>y</i><sub><i>n</i>−1</sub>) + <i>y<sub>n</sub></i>].</li>
+            <li>Con Δ<i>x</i>/2 = 0.2500, se sustituye: <i>A</i> ≈ 0.2500 · [0.00000 + 2(0.25000 + 1.00000 + 2.25000) + 4.00000] = 0.2500 · 11.00000.</li>
+            <li>Comparación: el valor exacto es 8/3 ≈ 2.6667, por lo que el error de la aproximación es de aproximadamente 0.0833.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> ≈ 2.7500 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">Utiliza la fórmula de trapecios para aproximar ∫<sub>1</sub><sup>3</sup> d<i>x</i>/<i>x</i> con <i>n</i> = 4.</p>
+          <figure class="grafica"><img alt="Trapecios para y = 1/x con n = 4" src="img/u3/e23_2.svg"/>
+            <figcaption>Figura 3.18. Trapecios para y = 1/x con n = 4</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se calcula el ancho de cada subintervalo: Δ<i>x</i> = (<i>b</i> − <i>a</i>)/<i>n</i> = (3 − 1)/4 = 0.5.</li>
+            <li>Se obtienen los nodos <i>x<sub>i</sub></i> = <i>a</i> + <i>i</i>Δ<i>x</i> y se evalúa la función en cada uno:
+            <div style="overflow-x:auto">
+              <table>
+                <tr><th><i>i</i></th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+                </tr>
+                <tr><th><i>x<sub>i</sub></i></th><td>1</td><td>1.5</td><td>2</td><td>2.5</td><td>3</td>
+                </tr>
+                <tr><th><i>f</i>(<i>x<sub>i</sub></i>)</th><td>1.00000</td><td>0.66667</td><td>0.50000</td><td>0.40000</td><td>0.33333</td>
+                </tr>
+              </table>
+            </div></li>
+            <li>Se aplica la fórmula de trapecios: <i>A</i> ≈ (Δ<i>x</i>/2)[<i>y</i><sub>0</sub> + 2(<i>y</i><sub>1</sub> + … + <i>y</i><sub><i>n</i>−1</sub>) + <i>y<sub>n</sub></i>].</li>
+            <li>Con Δ<i>x</i>/2 = 0.2500, se sustituye: <i>A</i> ≈ 0.2500 · [1.00000 + 2(0.66667 + 0.50000 + 0.40000) + 0.33333] = 0.2500 · 4.46667.</li>
+            <li>Comparación: el valor exacto es ln 3 ≈ 1.0986, por lo que el error de la aproximación es de aproximadamente 0.0181.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> ≈ 1.1167 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">Utiliza la fórmula de trapecios para aproximar ∫<sub>0</sub><sup>π</sup> sen <i>x</i> d<i>x</i> con <i>n</i> = 4.</p>
+          <figure class="grafica"><img alt="Trapecios para y = sen x con n = 4" src="img/u3/e23_3.svg"/>
+            <figcaption>Figura 3.19. Trapecios para y = sen x con n = 4</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se calcula el ancho de cada subintervalo: Δ<i>x</i> = (<i>b</i> − <i>a</i>)/<i>n</i> = (π − 0)/4 = π/4 ≈ 0.7854.</li>
+            <li>Se obtienen los nodos <i>x<sub>i</sub></i> = <i>a</i> + <i>i</i>Δ<i>x</i> y se evalúa la función en cada uno:
+            <div style="overflow-x:auto">
+              <table>
+                <tr><th><i>i</i></th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+                </tr>
+                <tr><th><i>x<sub>i</sub></i></th><td>0</td><td>π/4</td><td>π/2</td><td>3π/4</td><td>π</td>
+                </tr>
+                <tr><th><i>f</i>(<i>x<sub>i</sub></i>)</th><td>0.00000</td><td>0.70711</td><td>1.00000</td><td>0.70711</td><td>0.00000</td>
+                </tr>
+              </table>
+            </div></li>
+            <li>Se aplica la fórmula de trapecios: <i>A</i> ≈ (Δ<i>x</i>/2)[<i>y</i><sub>0</sub> + 2(<i>y</i><sub>1</sub> + … + <i>y</i><sub><i>n</i>−1</sub>) + <i>y<sub>n</sub></i>].</li>
+            <li>Con Δ<i>x</i>/2 = π/8 ≈ 0.3927, se sustituye: <i>A</i> ≈ 0.3927 · [0.00000 + 2(0.70711 + 1.00000 + 0.70711) + 0.00000] = 0.3927 · 4.82844.</li>
+            <li>Comparación: el valor exacto es 2 ≈ 2.0000, por lo que el error de la aproximación es de aproximadamente 0.1039.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> ≈ 1.8961 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">Utiliza la fórmula de trapecios para aproximar ∫<sub>0</sub><sup>4</sup> √<i>x</i> d<i>x</i> con <i>n</i> = 4.</p>
+          <figure class="grafica"><img alt="Trapecios para y = √x con n = 4" src="img/u3/e23_4.svg"/>
+            <figcaption>Figura 3.20. Trapecios para y = √x con n = 4</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se calcula el ancho de cada subintervalo: Δ<i>x</i> = (<i>b</i> − <i>a</i>)/<i>n</i> = (4 − 0)/4 = 1.</li>
+            <li>Se obtienen los nodos <i>x<sub>i</sub></i> = <i>a</i> + <i>i</i>Δ<i>x</i> y se evalúa la función en cada uno:
+            <div style="overflow-x:auto">
+              <table>
+                <tr><th><i>i</i></th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+                </tr>
+                <tr><th><i>x<sub>i</sub></i></th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+                </tr>
+                <tr><th><i>f</i>(<i>x<sub>i</sub></i>)</th><td>0.00000</td><td>1.00000</td><td>1.41421</td><td>1.73205</td><td>2.00000</td>
+                </tr>
+              </table>
+            </div></li>
+            <li>Se aplica la fórmula de trapecios: <i>A</i> ≈ (Δ<i>x</i>/2)[<i>y</i><sub>0</sub> + 2(<i>y</i><sub>1</sub> + … + <i>y</i><sub><i>n</i>−1</sub>) + <i>y<sub>n</sub></i>].</li>
+            <li>Con Δ<i>x</i>/2 = 0.5000, se sustituye: <i>A</i> ≈ 0.5000 · [0.00000 + 2(1.00000 + 1.41421 + 1.73205) + 2.00000] = 0.5000 · 10.29252.</li>
+            <li>Comparación: el valor exacto es 16/3 ≈ 5.3333, por lo que el error de la aproximación es de aproximadamente 0.1871.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> ≈ 5.1463 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">Utiliza la fórmula de trapecios para aproximar ∫<sub>0</sub><sup>2</sup> d<i>x</i>/(1 + <i>x</i>²) con <i>n</i> = 4.</p>
+          <figure class="grafica"><img alt="Trapecios para y = 1/(1 + x²) con n = 4" src="img/u3/e23_5.svg"/>
+            <figcaption>Figura 3.21. Trapecios para y = 1/(1 + x²) con n = 4</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se calcula el ancho de cada subintervalo: Δ<i>x</i> = (<i>b</i> − <i>a</i>)/<i>n</i> = (2 − 0)/4 = 0.5.</li>
+            <li>Se obtienen los nodos <i>x<sub>i</sub></i> = <i>a</i> + <i>i</i>Δ<i>x</i> y se evalúa la función en cada uno:
+            <div style="overflow-x:auto">
+              <table>
+                <tr><th><i>i</i></th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+                </tr>
+                <tr><th><i>x<sub>i</sub></i></th><td>0</td><td>0.5</td><td>1</td><td>1.5</td><td>2</td>
+                </tr>
+                <tr><th><i>f</i>(<i>x<sub>i</sub></i>)</th><td>1.00000</td><td>0.80000</td><td>0.50000</td><td>0.30769</td><td>0.20000</td>
+                </tr>
+              </table>
+            </div></li>
+            <li>Se aplica la fórmula de trapecios: <i>A</i> ≈ (Δ<i>x</i>/2)[<i>y</i><sub>0</sub> + 2(<i>y</i><sub>1</sub> + … + <i>y</i><sub><i>n</i>−1</sub>) + <i>y<sub>n</sub></i>].</li>
+            <li>Con Δ<i>x</i>/2 = 0.2500, se sustituye: <i>A</i> ≈ 0.2500 · [1.00000 + 2(0.80000 + 0.50000 + 0.30769) + 0.20000] = 0.2500 · 4.41538.</li>
+            <li>Comparación: el valor exacto es arctan 2 ≈ 1.1071, por lo que el error de la aproximación es de aproximadamente 0.0033.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> ≈ 1.1038 u²</p>
+        </div>
+      </section>
+      <section>
+        <h2>Método de Simpson 1/3</h2>
+        <p>Simpson sustituye cada par de subintervalos por un arco de parábola, por lo que suele ser más preciso que los trapecios. Exige que <i>n</i> sea par.</p>
+        <div class="formula"><small>Fórmula de Simpson 1/3</small><i>A</i> ≈ (Δ<i>x</i>/3) [<i>y</i><sub>0</sub> + 4<i>y</i><sub>1</sub> + 2<i>y</i><sub>2</sub> + 4<i>y</i><sub>3</sub> + … + 4<i>y</i><sub><i>n</i>−1</sub> + <i>y<sub>n</sub></i>]
+        </div>
+        <h3 id="s5">Ejercicio 24 · Método de Simpson 1/3</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">Utiliza el método de Simpson 1/3 para aproximar ∫<sub>0</sub><sup>2</sup> <i>x</i>² d<i>x</i> con <i>n</i> = 4.</p>
+          <figure class="grafica"><img alt="Arcos de parábola de Simpson para y = x² con n = 4" src="img/u3/e24_1.svg"/>
+            <figcaption>Figura 3.22. Arcos de parábola de Simpson para y = x² con n = 4</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Como <i>n</i> = 4 es par, se puede aplicar Simpson 1/3. Se calcula Δ<i>x</i> = (<i>b</i> − <i>a</i>)/<i>n</i> = (2 − 0)/4 = 0.5.</li>
+            <li>Se obtienen los nodos y se evalúa la función; el coeficiente alterna 4 y 2 en los puntos interiores y vale 1 en los extremos:
+            <div style="overflow-x:auto">
+              <table>
+                <tr><th><i>i</i></th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+                </tr>
+                <tr><th><i>x<sub>i</sub></i></th><td>0</td><td>0.5</td><td>1</td><td>1.5</td><td>2</td>
+                </tr>
+                <tr><th><i>f</i>(<i>x<sub>i</sub></i>)</th><td>0.00000</td><td>0.25000</td><td>1.00000</td><td>2.25000</td><td>4.00000</td>
+                </tr>
+                <tr><th>coeficiente</th><td>1</td><td>4</td><td>2</td><td>4</td><td>1</td>
+                </tr>
+              </table>
+            </div></li>
+            <li>Se aplica la fórmula: <i>A</i> ≈ (Δ<i>x</i>/3)[<i>y</i><sub>0</sub> + 4(<i>y</i><sub>1</sub> + <i>y</i><sub>3</sub> + …) + 2(<i>y</i><sub>2</sub> + <i>y</i><sub>4</sub> + …) + <i>y<sub>n</sub></i>].</li>
+            <li>Con Δ<i>x</i>/3 = 1/6 ≈ 0.1667, se agrupan las ordenadas de índice impar (coeficiente 4) y de índice par (coeficiente 2): <i>A</i> ≈ 0.1667 · [0.00000 + 4(0.25000 + 2.25000) + 2(1.00000) + 4.00000] = 0.1667 · 16.00000.</li>
+            <li>Comparación: el valor exacto es 8/3 ≈ 2.6667, por lo que el error es de menos de 0.0001.</li>
+            <li>Observación: Simpson resulta exacto para polinomios de grado menor o igual que 3, por eso aquí coincide con el valor exacto 8/3.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> ≈ 2.6667 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">Utiliza el método de Simpson 1/3 para aproximar ∫<sub>0</sub><sup>π</sup> sen <i>x</i> d<i>x</i> con <i>n</i> = 4.</p>
+          <figure class="grafica"><img alt="Arcos de parábola de Simpson para y = sen x con n = 4" src="img/u3/e24_2.svg"/>
+            <figcaption>Figura 3.23. Arcos de parábola de Simpson para y = sen x con n = 4</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Como <i>n</i> = 4 es par, se puede aplicar Simpson 1/3. Se calcula Δ<i>x</i> = (<i>b</i> − <i>a</i>)/<i>n</i> = (π − 0)/4 = π/4 ≈ 0.7854.</li>
+            <li>Se obtienen los nodos y se evalúa la función; el coeficiente alterna 4 y 2 en los puntos interiores y vale 1 en los extremos:
+            <div style="overflow-x:auto">
+              <table>
+                <tr><th><i>i</i></th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+                </tr>
+                <tr><th><i>x<sub>i</sub></i></th><td>0</td><td>π/4</td><td>π/2</td><td>3π/4</td><td>π</td>
+                </tr>
+                <tr><th><i>f</i>(<i>x<sub>i</sub></i>)</th><td>0.00000</td><td>0.70711</td><td>1.00000</td><td>0.70711</td><td>0.00000</td>
+                </tr>
+                <tr><th>coeficiente</th><td>1</td><td>4</td><td>2</td><td>4</td><td>1</td>
+                </tr>
+              </table>
+            </div></li>
+            <li>Se aplica la fórmula: <i>A</i> ≈ (Δ<i>x</i>/3)[<i>y</i><sub>0</sub> + 4(<i>y</i><sub>1</sub> + <i>y</i><sub>3</sub> + …) + 2(<i>y</i><sub>2</sub> + <i>y</i><sub>4</sub> + …) + <i>y<sub>n</sub></i>].</li>
+            <li>Con Δ<i>x</i>/3 = π/12 ≈ 0.2618, se agrupan las ordenadas de índice impar (coeficiente 4) y de índice par (coeficiente 2): <i>A</i> ≈ 0.2618 · [0.00000 + 4(0.70711 + 0.70711) + 2(1.00000) + 0.00000] = 0.2618 · 7.65688.</li>
+            <li>Comparación: el valor exacto es 2 ≈ 2.0000, por lo que el error es de aproximadamente 0.0046.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> ≈ 2.0046 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">Utiliza el método de Simpson 1/3 para aproximar ∫<sub>1</sub><sup>3</sup> d<i>x</i>/<i>x</i> con <i>n</i> = 4.</p>
+          <figure class="grafica"><img alt="Arcos de parábola de Simpson para y = 1/x con n = 4" src="img/u3/e24_3.svg"/>
+            <figcaption>Figura 3.24. Arcos de parábola de Simpson para y = 1/x con n = 4</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Como <i>n</i> = 4 es par, se puede aplicar Simpson 1/3. Se calcula Δ<i>x</i> = (<i>b</i> − <i>a</i>)/<i>n</i> = (3 − 1)/4 = 0.5.</li>
+            <li>Se obtienen los nodos y se evalúa la función; el coeficiente alterna 4 y 2 en los puntos interiores y vale 1 en los extremos:
+            <div style="overflow-x:auto">
+              <table>
+                <tr><th><i>i</i></th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+                </tr>
+                <tr><th><i>x<sub>i</sub></i></th><td>1</td><td>1.5</td><td>2</td><td>2.5</td><td>3</td>
+                </tr>
+                <tr><th><i>f</i>(<i>x<sub>i</sub></i>)</th><td>1.00000</td><td>0.66667</td><td>0.50000</td><td>0.40000</td><td>0.33333</td>
+                </tr>
+                <tr><th>coeficiente</th><td>1</td><td>4</td><td>2</td><td>4</td><td>1</td>
+                </tr>
+              </table>
+            </div></li>
+            <li>Se aplica la fórmula: <i>A</i> ≈ (Δ<i>x</i>/3)[<i>y</i><sub>0</sub> + 4(<i>y</i><sub>1</sub> + <i>y</i><sub>3</sub> + …) + 2(<i>y</i><sub>2</sub> + <i>y</i><sub>4</sub> + …) + <i>y<sub>n</sub></i>].</li>
+            <li>Con Δ<i>x</i>/3 = 1/6 ≈ 0.1667, se agrupan las ordenadas de índice impar (coeficiente 4) y de índice par (coeficiente 2): <i>A</i> ≈ 0.1667 · [1.00000 + 4(0.66667 + 0.40000) + 2(0.50000) + 0.33333] = 0.1667 · 6.60001.</li>
+            <li>Comparación: el valor exacto es ln 3 ≈ 1.0986, por lo que el error es de aproximadamente 0.0014.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> ≈ 1.1000 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">Utiliza el método de Simpson 1/3 para aproximar ∫<sub>0</sub><sup>2</sup> d<i>x</i>/(1 + <i>x</i>²) con <i>n</i> = 4.</p>
+          <figure class="grafica"><img alt="Arcos de parábola de Simpson para y = 1/(1 + x²) con n = 4" src="img/u3/e24_4.svg"/>
+            <figcaption>Figura 3.25. Arcos de parábola de Simpson para y = 1/(1 + x²) con n = 4</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Como <i>n</i> = 4 es par, se puede aplicar Simpson 1/3. Se calcula Δ<i>x</i> = (<i>b</i> − <i>a</i>)/<i>n</i> = (2 − 0)/4 = 0.5.</li>
+            <li>Se obtienen los nodos y se evalúa la función; el coeficiente alterna 4 y 2 en los puntos interiores y vale 1 en los extremos:
+            <div style="overflow-x:auto">
+              <table>
+                <tr><th><i>i</i></th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+                </tr>
+                <tr><th><i>x<sub>i</sub></i></th><td>0</td><td>0.5</td><td>1</td><td>1.5</td><td>2</td>
+                </tr>
+                <tr><th><i>f</i>(<i>x<sub>i</sub></i>)</th><td>1.00000</td><td>0.80000</td><td>0.50000</td><td>0.30769</td><td>0.20000</td>
+                </tr>
+                <tr><th>coeficiente</th><td>1</td><td>4</td><td>2</td><td>4</td><td>1</td>
+                </tr>
+              </table>
+            </div></li>
+            <li>Se aplica la fórmula: <i>A</i> ≈ (Δ<i>x</i>/3)[<i>y</i><sub>0</sub> + 4(<i>y</i><sub>1</sub> + <i>y</i><sub>3</sub> + …) + 2(<i>y</i><sub>2</sub> + <i>y</i><sub>4</sub> + …) + <i>y<sub>n</sub></i>].</li>
+            <li>Con Δ<i>x</i>/3 = 1/6 ≈ 0.1667, se agrupan las ordenadas de índice impar (coeficiente 4) y de índice par (coeficiente 2): <i>A</i> ≈ 0.1667 · [1.00000 + 4(0.80000 + 0.30769) + 2(0.50000) + 0.20000] = 0.1667 · 6.63076.</li>
+            <li>Comparación: el valor exacto es arctan 2 ≈ 1.1071, por lo que el error es de aproximadamente 0.0020.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> ≈ 1.1051 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">Utiliza el método de Simpson 1/3 para aproximar ∫<sub>0</sub><sup>1</sup> <i>e<sup>x</sup></i> d<i>x</i> con <i>n</i> = 6.</p>
+          <figure class="grafica"><img alt="Arcos de parábola de Simpson para y = eˣ con n = 6" src="img/u3/e24_5.svg"/>
+            <figcaption>Figura 3.26. Arcos de parábola de Simpson para y = eˣ con n = 6</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Como <i>n</i> = 6 es par, se puede aplicar Simpson 1/3. Se calcula Δ<i>x</i> = (<i>b</i> − <i>a</i>)/<i>n</i> = (1 − 0)/6 ≈ 0.1667.</li>
+            <li>Se obtienen los nodos y se evalúa la función; el coeficiente alterna 4 y 2 en los puntos interiores y vale 1 en los extremos:
+            <div style="overflow-x:auto">
+              <table>
+                <tr><th><i>i</i></th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+                </tr>
+                <tr><th><i>x<sub>i</sub></i></th><td>0</td><td>1/6</td><td>2/6</td><td>3/6</td><td>4/6</td><td>5/6</td><td>1</td>
+                </tr>
+                <tr><th><i>f</i>(<i>x<sub>i</sub></i>)</th><td>1.00000</td><td>1.18136</td><td>1.39561</td><td>1.64872</td><td>1.94773</td><td>2.30098</td><td>2.71828</td>
+                </tr>
+                <tr><th>coeficiente</th><td>1</td><td>4</td><td>2</td><td>4</td><td>2</td><td>4</td><td>1</td>
+                </tr>
+              </table>
+            </div></li>
+            <li>Se aplica la fórmula: <i>A</i> ≈ (Δ<i>x</i>/3)[<i>y</i><sub>0</sub> + 4(<i>y</i><sub>1</sub> + <i>y</i><sub>3</sub> + …) + 2(<i>y</i><sub>2</sub> + <i>y</i><sub>4</sub> + …) + <i>y<sub>n</sub></i>].</li>
+            <li>Con Δ<i>x</i>/3 = 1/18 ≈ 0.0556, se agrupan las ordenadas de índice impar (coeficiente 4) y de índice par (coeficiente 2): <i>A</i> ≈ 0.0556 · [1.00000 + 4(1.18136 + 1.64872 + 2.30098) + 2(1.39561 + 1.94773) + 2.71828] = 0.0556 · 30.92920.</li>
+            <li>Comparación: el valor exacto es <i>e</i> − 1 ≈ 1.7183, por lo que el error es de menos de 0.0001.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> ≈ 1.7183 u²</p>
+        </div>
+      </section>
+      <section>
+        <h2>Área entre curvas</h2>
+        <p>Para hallar el área entre dos curvas se igualan las funciones para obtener los puntos de intersección, se identifica cuál curva queda arriba en cada tramo y se integra la diferencia (superior − inferior).</p>
+        <div class="formula"><small>Área entre curvas</small><i>A</i> = ∫<sub><i>a</i></sub><sup><i>b</i></sup> [<i>f</i><sub>sup</sub>(<i>x</i>) − <i>f</i><sub>inf</sub>(<i>x</i>)] d<i>x</i>
+        </div>
+        <figure>
+          <!-- IMAGEN: reemplaza el div por <img src="img/archivo.png" alt="..."> -->
+          <div class="espacio">Espacio para imagen<br/>Esquema de curva superior, curva inferior y puntos de intersección
+          </div>
+          <figcaption>Figura 3.27. Región limitada por dos curvas.</figcaption>
+        </figure>
+        <h3 id="s6">Ejercicio 25 · Área entre curvas</h3>
+        <div class="ejemplo">
+          <h4>Ejemplo 1</h4>
+          <p class="enun">Obtén el área limitada entre las curvas <i>y</i> = <i>x</i>² y <i>y</i> = <i>x</i> + 2.</p>
+          <figure class="grafica"><img alt="Región entre la parábola y = x² y la recta y = x + 2" src="img/u3/e25_1.svg"/>
+            <figcaption>Figura 3.28. Región entre la parábola y = x² y la recta y = x + 2</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se hallan los puntos de intersección igualando las funciones: <i>x</i>² = <i>x</i> + 2 ⇒ <i>x</i>² − <i>x</i> − 2 = 0 ⇒ (<i>x</i> − 2)(<i>x</i> + 1) = 0, de donde <i>x</i> = −1 y <i>x</i> = 2.</li>
+            <li>Se determina cuál función queda arriba: en <i>x</i> = 0, la recta vale 2 y la parábola 0, así que la recta es la superior.</li>
+            <li>Se plantea <i>A</i> = ∫<sub>−1</sub><sup>2</sup> [(<i>x</i> + 2) − <i>x</i>²] d<i>x</i>.</li>
+            <li>Una antiderivada es <i>F</i>(<i>x</i>) = <i>x</i>²/2 + 2<i>x</i> − <i>x</i>³/3, con <i>F</i>(2) = 10/3 y <i>F</i>(−1) = −7/6.</li>
+            <li><i>A</i> = 10/3 − (−7/6) = 20/6 + 7/6 = 27/6 = 9/2.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 9/2 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 2</h4>
+          <p class="enun">Obtén el área limitada entre las curvas <i>y</i> = 4<i>x</i> − <i>x</i>² y <i>y</i> = <i>x</i>².</p>
+          <figure class="grafica"><img alt="Región entre y = 4x − x² y y = x²" src="img/u3/e25_2.svg"/>
+            <figcaption>Figura 3.29. Región entre y = 4x − x² y y = x²</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se igualan las funciones: 4<i>x</i> − <i>x</i>² = <i>x</i>² ⇒ 4<i>x</i> − 2<i>x</i>² = 0 ⇒ 2<i>x</i>(2 − <i>x</i>) = 0, de donde <i>x</i> = 0 y <i>x</i> = 2.</li>
+            <li>En <i>x</i> = 1: 4(1) − 1 = 3 y 1² = 1, así que 4<i>x</i> − <i>x</i>² es la curva superior.</li>
+            <li>Se plantea <i>A</i> = ∫<sub>0</sub><sup>2</sup> [(4<i>x</i> − <i>x</i>²) − <i>x</i>²] d<i>x</i> = ∫<sub>0</sub><sup>2</sup> (4<i>x</i> − 2<i>x</i>²) d<i>x</i>.</li>
+            <li><i>A</i> = [2<i>x</i>² − 2<i>x</i>³/3]<sub>0</sub><sup>2</sup> = 8 − 16/3 = 8/3.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 8/3 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 3</h4>
+          <p class="enun">Obtén el área limitada entre las curvas <i>y</i> = <i>x</i>³ y <i>y</i> = <i>x</i>.</p>
+          <figure class="grafica"><img alt="Dos regiones entre y = x³ y y = x" src="img/u3/e25_3.svg"/>
+            <figcaption>Figura 3.30. Dos regiones entre y = x³ y y = x</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se igualan las funciones: <i>x</i>³ = <i>x</i> ⇒ <i>x</i>(<i>x</i>² − 1) = 0, de donde <i>x</i> = −1, 0 y 1. Hay dos regiones cerradas.</li>
+            <li>En (−1, 0) la curva superior es <i>y</i> = <i>x</i>³ (por ejemplo, en <i>x</i> = −0.5: −0.125 &gt; −0.5); en (0, 1) la superior es <i>y</i> = <i>x</i>.</li>
+            <li><i>A</i><sub>1</sub> = ∫<sub>−1</sub><sup>0</sup> (<i>x</i>³ − <i>x</i>) d<i>x</i> = [<i>x</i>⁴/4 − <i>x</i>²/2]<sub>−1</sub><sup>0</sup> = 0 − (1/4 − 1/2) = 1/4.</li>
+            <li><i>A</i><sub>2</sub> = ∫<sub>0</sub><sup>1</sup> (<i>x</i> − <i>x</i>³) d<i>x</i> = [<i>x</i>²/2 − <i>x</i>⁴/4]<sub>0</sub><sup>1</sup> = 1/2 − 1/4 = 1/4.</li>
+            <li>Se suman: <i>A</i> = 1/4 + 1/4 = 1/2.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 1/2 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 4</h4>
+          <p class="enun">Obtén el área limitada entre las curvas <i>y</i> = √<i>x</i> y <i>y</i> = <i>x</i>².</p>
+          <figure class="grafica"><img alt="Región entre y = √x y y = x²" src="img/u3/e25_4.svg"/>
+            <figcaption>Figura 3.31. Región entre y = √x y y = x²</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Se igualan las funciones: √<i>x</i> = <i>x</i>². Al elevar al cuadrado, <i>x</i> = <i>x</i>⁴ ⇒ <i>x</i>(1 − <i>x</i>³) = 0, de donde <i>x</i> = 0 y <i>x</i> = 1.</li>
+            <li>En <i>x</i> = 0.25: √0.25 = 0.5 y 0.25² = 0.0625, así que √<i>x</i> es la curva superior.</li>
+            <li>Se plantea <i>A</i> = ∫<sub>0</sub><sup>1</sup> (<i>x</i><sup>1/2</sup> − <i>x</i>²) d<i>x</i> = [(2/3)<i>x</i><sup>3/2</sup> − <i>x</i>³/3]<sub>0</sub><sup>1</sup>.</li>
+            <li><i>A</i> = 2/3 − 1/3 = 1/3.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 1/3 u²</p>
+        </div>
+        <div class="ejemplo">
+          <h4>Ejemplo 5</h4>
+          <p class="enun">Obtén el área limitada entre las curvas <i>x</i> = <i>y</i>² y <i>x</i> = 2<i>y</i> + 3.</p>
+          <figure class="grafica"><img alt="Región entre x = y² y la recta x = 2y + 3" src="img/u3/e25_5.svg"/>
+            <figcaption>Figura 3.32. Región entre x = y² y la recta x = 2y + 3</figcaption>
+          </figure>
+          <ol class="pasos">
+            <li>Las curvas están dadas como <i>x</i> en función de <i>y</i>, por lo que se integra respecto a <i>y</i>. Se igualan: <i>y</i>² = 2<i>y</i> + 3 ⇒ <i>y</i>² − 2<i>y</i> − 3 = 0 ⇒ (<i>y</i> − 3)(<i>y</i> + 1) = 0, de donde <i>y</i> = −1 y <i>y</i> = 3.</li>
+            <li>Se determina la curva de la derecha: en <i>y</i> = 0, la recta da <i>x</i> = 3 y la parábola <i>x</i> = 0, así que la recta queda a la derecha.</li>
+            <li>Se plantea <i>A</i> = ∫<sub>−1</sub><sup>3</sup> [(2<i>y</i> + 3) − <i>y</i>²] d<i>y</i>.</li>
+            <li>Una antiderivada es <i>F</i>(<i>y</i>) = <i>y</i>² + 3<i>y</i> − <i>y</i>³/3, con <i>F</i>(3) = 9 y <i>F</i>(−1) = −5/3.</li>
+            <li><i>A</i> = 9 − (−5/3) = 32/3.</li>
+          </ol>
+          <p class="res">Resultado: <i>A</i> = 32/3 u²</p>
+        </div>
+      </section>
+      <div class="pie-nav"><a href="unidad2.html">← Unidad 2</a>
+      </div>
+    </main>
+  </div>
+  <footer>Cálculo Integral · CONAMAT, Pearson (2010)
+</footer></body></html>
